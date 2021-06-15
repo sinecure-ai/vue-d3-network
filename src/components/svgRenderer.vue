@@ -11,8 +11,6 @@
     @touchstart.passive=''
     )
 
-
-
     //- defs.paths#1-paths
     //-     clipPath(v-for='(node,key) in nodes'
     //-      :id="`pattern-${node.id}`")
@@ -29,7 +27,6 @@
     //-           :class="nodeClass(node)"
     //-           v-bind='node._svgAttrs'
     //-           )
-
 
     //-> links
     g.links#l-links
@@ -64,7 +61,6 @@
           v-bind='node._svgAttrs'
           )
 
-
         image(v-else-if='imgNode(node)'
           :key='key'
           :xlink:href='imgNodeUrl(node)'
@@ -96,9 +92,6 @@
           :class="nodeClass(node)"
           v-bind='node._svgAttrs'
           )
-
-
-        
 
     //-> Links Labels
     g.labels#link-labels(v-if='linkLabels')
@@ -146,36 +139,33 @@ export default {
       return null
     }
   },
-  mounted(){
-    console.log(this.labelOffset)
-  },
   methods: {
     getNodeSize (node, side) {
       let size = node._size || this.nodeSize
       if (side) size = node['_' + side] || size
       return size
     },
-    imgNodeWidth(node, side){
+    imgNodeWidth (node, side) {
       let size = node._size || this.nodeSize
       if (side) size = node['_' + side] || size
       return size
     },
-    imgNodeX(node){
-     return node.x - this.imgNodeWidth(node, 'width');
+    imgNodeX (node) {
+      return node.x - this.imgNodeWidth(node, 'width')
     },
-    imgNodeY(node){
-     return node.y - this.imgNodeHeight(node, 'height');
+    imgNodeY (node) {
+      return node.y - this.imgNodeHeight(node, 'height')
     },
-    imgNodeHeight(node, side){
+    imgNodeHeight (node, side) {
       let size = node._size || this.nodeSize
       if (side) size = node['_' + side] || size
       return size
     },
-    imgNode(node){
+    imgNode (node) {
       return node.imgObj
     },
-    imgNodeUrl(node){
-      return node.imgObj.url;
+    imgNodeUrl (node) {
+      return node.imgObj.url
     },
     svgIcon (node) {
       return node.svgObj || this.nodeSvg
