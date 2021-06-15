@@ -53,8 +53,8 @@ export default {
       nodes: [],
       links: [],
       size: {
-        w: 500,
-        h: 500
+        w: 1000,
+        h: 1000
       },
       offset: {
         x: 0,
@@ -67,8 +67,8 @@ export default {
       force: 500,
       forces: {
         Center: false,
-        X: 0.5,
-        Y: 0.5,
+        X: 0.2,
+        Y: 0.2,
         ManyBody: true,
         Link: true
       },
@@ -79,7 +79,7 @@ export default {
       linkWidth: 1,
       nodeLabels: false,
       linkLabels: false,
-      nodeSize: 5,
+      nodeSize: 50,
       mouseOfst: {
         x: 0,
         y: 0
@@ -164,8 +164,8 @@ export default {
     },
     labelOffset () {
       return {
-        x: (this.nodeSize / 2) + (this.fontSize / 2),
-        y: this.fontSize / 2
+        x: 10,
+        y: 50
       }
     }
   },

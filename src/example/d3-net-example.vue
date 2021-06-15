@@ -13,63 +13,6 @@
     @link-click="linkClick"
     @screen-shot='screenShotDone'
     )
-    //-> toaster
-    .toaster(v-if='toaster')
-      p {{toaster}}
-    //-> Svg export dialog
-    .dialog-container(v-if='svgChoice')
-      .dialog
-        h5 Export as:
-        input(id='to-svg' type='radio' :value='true' v-model='toSvg')
-        label(for='to-svg') svg
-        input(id='to-png' type='radio' :value='false' v-model='toSvg')
-        label(for='to-png') png
-        .buttons
-          button.btn(@click='takeScreenShot') Export
-          button.btn(@click='svgChoice=false') Cancel
-    //-> Tools
-    .tools
-      ul
-        li(v-for='t,to in tools')
-          button.circle(@click='setTool(to)' :class='buttonClass(to)')
-            span(:class='t.class' )
-        li
-          button.circle(@click='screenShot')
-            span.icon-camera
-      .tip {{ tools[tool].tip }}
-
-    //-> Selection
-    selection( v-if='showSelection'
-      @action="selectionEvent"
-      :data="selection()")
-    //-> Menu
-    .over
-      .menu-net(v-if="showMenu")
-        .close(@click="setShowMenu(false)")
-        d3-net-example-menu(
-          :nodes="nodes"
-          :links="links"
-          :settings="settings"
-          :options="options"
-          @options="changeOptions"
-          @simulate="reset"
-          @reset="resetOptions"
-          )
-
-      .options.menu(v-else)
-        button.menu(@click="setShowMenu(true)" :class='(showHint) ? "anim-button" :""')
-          span(class="icon-equalizerh")
-        h2.hint(v-if='showHint')
-          span.icon ☜
-          span menu
-        .title
-          h1 {{app.name}}
-        ul.inline
-          li
-            small nodes: {{ nodes.length }}
-          li
-            small links: {{ links.length }}
-
 </template>
 <script>
 import * as utils from './utils.js'
@@ -112,7 +55,7 @@ export default {
     data.lastLinkId = 0
     data.settings = {
       maxLinks: 3,
-      maxNodes: 150
+      maxNodes: 50
     }
     data.showHint = true
     data.toaster = null

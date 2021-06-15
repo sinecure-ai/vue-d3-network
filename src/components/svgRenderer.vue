@@ -11,6 +11,26 @@
     @touchstart.passive=''
     )
 
+
+
+    //- defs.paths#1-paths
+    //-     clipPath(v-for='(node,key) in nodes'
+    //-      :id="`pattern-${node.id}`")
+    //-         circle(
+    //-           :r="getNodeSize(node) / 4"
+    //-           @click='emit("nodeClick",[$event,node])'
+    //-           @touchend.passive='emit("nodeClick",[$event,node])'
+    //-           @mousedown.prevent='emit("dragStart",[$event,key])'
+    //-           @touchstart.prevent='emit("dragStart",[$event,key])'
+    //-           :cx="node.x"
+    //-           :cy="node.y"
+    //-           :style='nodeStyle(node)'
+    //-           :title="node.name"
+    //-           :class="nodeClass(node)"
+    //-           v-bind='node._svgAttrs'
+    //-           )
+
+
     //-> links
     g.links#l-links
         path(v-for="link in links"
@@ -44,21 +64,41 @@
           v-bind='node._svgAttrs'
           )
 
-        //- default circle nodes
+
+        image(v-else-if='imgNode(node)'
+          :key='key'
+          :xlink:href='imgNodeUrl(node)'
+          :width='imgNodeWidth(node, "width")'
+          :height='imgNodeHeight(node, "height")'
+          @click='emit("nodeClick",[$event,node])'
+          @touchend.passive='emit("nodeClick",[$event,node])'
+          @mousedown.prevent='emit("dragStart",[$event,key])'
+          @touchstart.prevent='emit("dragStart",[$event,key])'
+          :x="node.x"
+          :y="node.y"
+          :style='imgNodeStyle(node)'
+          :class="imgNodeClass(node)"
+          v-bind='node._svgAttrs'
+          )
+
+            //- default circle nodes
         circle(v-else
-        :key='key'
-        :r="getNodeSize(node) / 2"
-        @click='emit("nodeClick",[$event,node])'
-        @touchend.passive='emit("nodeClick",[$event,node])'
-        @mousedown.prevent='emit("dragStart",[$event,key])'
-        @touchstart.prevent='emit("dragStart",[$event,key])'
-        :cx="node.x"
-        :cy="node.y"
-        :style='nodeStyle(node)'
-        :title="node.name"
-        :class="nodeClass(node)"
-        v-bind='node._svgAttrs'
-        )
+          :key='key'
+          :r="getNodeSize(node) / 2"
+          @click='emit("nodeClick",[$event,node])'
+          @touchend.passive='emit("nodeClick",[$event,node])'
+          @mousedown.prevent='emit("dragStart",[$event,key])'
+          @touchstart.prevent='emit("dragStart",[$event,key])'
+          :cx="node.x"
+          :cy="node.y"
+          :style='nodeStyle(node)'
+          :title="node.name"
+          :class="nodeClass(node)"
+          v-bind='node._svgAttrs'
+          )
+
+
+        
 
     //-> Links Labels
     g.labels#link-labels(v-if='linkLabels')
@@ -68,7 +108,7 @@
     //- -> Node Labels
     g.labels#node-labels( v-if="nodeLabels")
       text.node-label(v-for="node in nodes"
-        :x='node.x + (getNodeSize(node) / 2) + (fontSize / 2)'
+        :x='node.x + labelOffset.x'
         :y='node.y + labelOffset.y'
         :font-size="fontSize"
         :class='(node._labelClass) ? node._labelClass : ""'
@@ -106,11 +146,36 @@ export default {
       return null
     }
   },
+  mounted(){
+    console.log(this.labelOffset)
+  },
   methods: {
     getNodeSize (node, side) {
       let size = node._size || this.nodeSize
       if (side) size = node['_' + side] || size
       return size
+    },
+    imgNodeWidth(node, side){
+      let size = node._size || this.nodeSize
+      if (side) size = node['_' + side] || size
+      return size
+    },
+    imgNodeX(node){
+     return node.x - this.imgNodeWidth(node, 'width');
+    },
+    imgNodeY(node){
+     return node.y - this.imgNodeHeight(node, 'height');
+    },
+    imgNodeHeight(node, side){
+      let size = node._size || this.nodeSize
+      if (side) size = node['_' + side] || size
+      return size
+    },
+    imgNode(node){
+      return node.imgObj
+    },
+    imgNodeUrl(node){
+      return node.imgObj.url;
     },
     svgIcon (node) {
       return node.svgObj || this.nodeSvg
@@ -156,12 +221,24 @@ export default {
     nodeStyle (node) {
       return (node._color) ? 'fill: ' + node._color : ''
     },
+    imgNodeStyle (node) {
+      return (node._color) ? 'fill: ' + node._color : ''
+    },
     linkStyle (link) {
       let style = {}
       if (link._color) style.stroke = link._color
       return style
     },
     nodeClass (node, classes = []) {
+      let cssClass = (node._cssClass) ? node._cssClass : []
+      if (!Array.isArray(cssClass)) cssClass = [cssClass]
+      cssClass.push('node')
+      classes.forEach(c => cssClass.push(c))
+      if (this.selected[node.id]) cssClass.push('selected')
+      if (node.fx || node.fy) cssClass.push('pinned')
+      return cssClass
+    },
+    imgNodeClass (node, classes = []) {
       let cssClass = (node._cssClass) ? node._cssClass : []
       if (!Array.isArray(cssClass)) cssClass = [cssClass]
       cssClass.push('node')

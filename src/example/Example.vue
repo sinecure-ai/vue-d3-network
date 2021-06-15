@@ -8,10 +8,7 @@
           h1 {{ app.name }}
           h2.subtitle {{ app.des }}
     //-Links
-    ul.links
-        li
-          a(:href='app.repo')
-            .icon(v-html='icons.gitHub')
+
 
 </template>
 
