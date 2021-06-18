@@ -115,7 +115,7 @@
 
     div(
       id="tooltip"
-      v-bind:style="{position: 'absolute', top: tooltipy, left: tooltipx, visibility: tooltipVisible? 'visible': 'hidden', width: '200px', height: '500px', backgroundColor: '#ffffff'}"
+      v-bind:style="{position: 'absolute', top: tooltipy, left: tooltipx, visibility: tooltipVisible? 'visible': 'hidden', width: '200px', height: '300px', backgroundColor: '#ffffff'}"
     )
       div(
         id="tooltip-header"
@@ -129,14 +129,12 @@
         )
       div(
         id="tooltip-title"
-      )  
+      )
         h4() Harish kumar chellappa
         h5() Full Stack Developer
-
-        p(style="fontSize: 10px;") Bengaluru University 
-        p(style="fontSize: 10px;") Sinecure AI 
-        p(style="fontSize: 10px;") Bengaluru, India 
-
+        p(style="fontSize: 10px;") Bengaluru University
+        p(style="fontSize: 10px;") Sinecure AI
+        p(style="fontSize: 10px;") Bengaluru, India
         button(style="width: 100px; height: 25px; backgroundColor: #14325C; color: #ffffff;") Message
 </template>
 <script>
@@ -161,7 +159,7 @@ export default {
     'labelOffset',
     'nodeSym'
   ],
-  data (){
+  data () {
     return {
       tooltipy: '0px',
       tooltipx: '0px',
@@ -301,15 +299,15 @@ export default {
       attrs['stroke-width'] = attrs['stroke-width'] || this.linkWidth
       return attrs
     },
-    mouseover(e, node){
-      this.tooltipy = `${e.pageY}px`;
-      this.tooltipx = `${e.pageX}px`;
-      this.tooltipVisible = true;
-      this.selectedNode = node;
+    mouseover (e, node) {
+      this.tooltipy = `${e.pageY}px`
+      this.tooltipx = `${e.pageX}px`
+      this.tooltipVisible = true
+      this.selectedNode = node
     },
-    mouseout(e, node){
-      this.tooltipVisible = false;
-      this.selectedNode = node;
+    mouseout (e, node) {
+      this.tooltipVisible = false
+      this.selectedNode = node
     }
   }
 }
