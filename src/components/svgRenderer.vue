@@ -1,112 +1,143 @@
 <template lang="pug">
-  svg(
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink= "http://www.w3.org/1999/xlink"
-    ref="svg"
-    :width="size.w"
-    :height="size.h"
-    class="net-svg"
-    @mouseup='emit("dragEnd",[$event])'
-    @touchend.passive='emit("dragEnd",[$event])'
-    @touchstart.passive=''
+  div(
+    id="chart-root"
+  )
+    svg(
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink= "http://www.w3.org/1999/xlink"
+      ref="svg"
+      :width="size.w"
+      :height="size.h"
+      class="net-svg"
+      @mouseup='emit("dragEnd",[$event])'
+      @touchend.passive='emit("dragEnd",[$event])'
+      @touchstart.passive=''
+      )
+
+      //- defs.paths#1-paths
+      //-     clipPath(v-for='(node,key) in nodes'
+      //-      :id="`pattern-${node.id}`")
+      //-         circle(
+      //-           :r="getNodeSize(node) / 4"
+      //-           @click='emit("nodeClick",[$event,node])'
+      //-           @touchend.passive='emit("nodeClick",[$event,node])'
+      //-           @mousedown.prevent='emit("dragStart",[$event,key])'
+      //-           @touchstart.prevent='emit("dragStart",[$event,key])'
+      //-           :cx="node.x"
+      //-           :cy="node.y"
+      //-           :style='nodeStyle(node)'
+      //-           :title="node.name"
+      //-           :class="nodeClass(node)"
+      //-           v-bind='node._svgAttrs'
+      //-           )
+
+      //-> links
+      g.links#l-links
+          path(v-for="link in links"
+            :d="linkPath(link)"
+            :id="link.id"
+            @click='emit("linkClick",[$event,link])'
+            @touchstart.passive='emit("linkClick",[$event,link])'
+            v-bind='linkAttrs(link)'
+            :class='linkClass(link.id)'
+            :style='linkStyle(link)'
+            )
+
+      //- -> nodes
+      g.nodes#l-nodes(v-if='!noNodes')
+        template(v-for='(node,key) in nodes')
+          svg(v-if='svgIcon(node)'
+            :key='key'
+            :viewBox='svgIcon(node).attrs.viewBox'
+            :width='getNodeSize(node, "width")'
+            :height='getNodeSize(node, "height")'
+            @click='emit("nodeClick",[$event,node])'
+            @touchend.passive='emit("nodeClick",[$event,node])'
+            @mousedown.prevent='emit("dragStart",[$event,key])'
+            @touchstart.prevent='emit("dragStart",[$event,key])'
+            :x='node.x - getNodeSize(node, "width") / 2'
+            :y='node.y - getNodeSize(node, "height") / 2'
+            :style='nodeStyle(node)'
+            :title="node.name"
+            :class='nodeClass(node,["node-svg"])'
+            v-html='svgIcon(node).data'
+            v-bind='node._svgAttrs'
+            )
+
+          image(v-else-if='imgNode(node)'
+            :key='key'
+            :xlink:href='imgNodeUrl(node)'
+            :width='imgNodeWidth(node, "width")'
+            :height='imgNodeHeight(node, "height")'
+            @click='emit("nodeClick",[$event,node])'
+            @touchend.passive='emit("nodeClick",[$event,node])'
+            @mousedown.prevent='emit("dragStart",[$event,key])'
+            @touchstart.prevent='emit("dragStart",[$event,key])'
+            @mouseover.prevent='(e) => { mouseover(e, node) }'
+            @mouseout.prevent='(e) => { mouseout(e, node) }'
+            :x="node.x"
+            :y="node.y"
+            :style='imgNodeStyle(node)'
+            :class="imgNodeClass(node)"
+            v-bind='node._svgAttrs'
+            )
+
+              //- default circle nodes
+          circle(v-else
+            :key='key'
+            :r="getNodeSize(node) / 2"
+            @click='emit("nodeClick",[$event,node])'
+            @touchend.passive='emit("nodeClick",[$event,node])'
+            @mousedown.prevent='emit("dragStart",[$event,key])'
+            @touchstart.prevent='emit("dragStart",[$event,key])'
+            :cx="node.x"
+            :cy="node.y"
+            :style='nodeStyle(node)'
+            :title="node.name"
+            :class="nodeClass(node)"
+            v-bind='node._svgAttrs'
+            )
+
+      //-> Links Labels
+      g.labels#link-labels(v-if='linkLabels')
+        text.link-label(v-for="link in links" :font-size="fontSize" )
+          textPath(v-bind:xlink:href="'#' + link.id" startOffset= "50%") {{ link.name }}
+
+      //- -> Node Labels
+      g.labels#node-labels( v-if="nodeLabels")
+        text.node-label(v-for="node in nodes"
+          :x='node.x + labelOffset.x'
+          :y='node.y + labelOffset.y'
+          :font-size="fontSize"
+          :class='(node._labelClass) ? node._labelClass : ""'
+          :stroke-width='fontSize / 8'
+        ) {{ node.name }}
+
+    div(
+      id="tooltip"
+      v-bind:style="{position: 'absolute', top: tooltipy, left: tooltipx, visibility: tooltipVisible? 'visible': 'hidden', width: '200px', height: '500px', backgroundColor: '#ffffff'}"
     )
+      div(
+        id="tooltip-header"
+        style="width: 100%;"
+      )
+        img(
+          v-if="selectedNode && selectedNode.imgObj"
+          id="tooltip-img"
+          :src="selectedNode.imgObj.url"
+          style="width: 50px; height: 50px;"
+        )
+      div(
+        id="tooltip-title"
+      )  
+        h4() Harish kumar chellappa
+        h5() Full Stack Developer
 
-    //- defs.paths#1-paths
-    //-     clipPath(v-for='(node,key) in nodes'
-    //-      :id="`pattern-${node.id}`")
-    //-         circle(
-    //-           :r="getNodeSize(node) / 4"
-    //-           @click='emit("nodeClick",[$event,node])'
-    //-           @touchend.passive='emit("nodeClick",[$event,node])'
-    //-           @mousedown.prevent='emit("dragStart",[$event,key])'
-    //-           @touchstart.prevent='emit("dragStart",[$event,key])'
-    //-           :cx="node.x"
-    //-           :cy="node.y"
-    //-           :style='nodeStyle(node)'
-    //-           :title="node.name"
-    //-           :class="nodeClass(node)"
-    //-           v-bind='node._svgAttrs'
-    //-           )
+        p(style="fontSize: 10px;") Bengaluru University 
+        p(style="fontSize: 10px;") Sinecure AI 
+        p(style="fontSize: 10px;") Bengaluru, India 
 
-    //-> links
-    g.links#l-links
-        path(v-for="link in links"
-          :d="linkPath(link)"
-          :id="link.id"
-          @click='emit("linkClick",[$event,link])'
-          @touchstart.passive='emit("linkClick",[$event,link])'
-          v-bind='linkAttrs(link)'
-          :class='linkClass(link.id)'
-          :style='linkStyle(link)'
-          )
-
-    //- -> nodes
-    g.nodes#l-nodes(v-if='!noNodes')
-      template(v-for='(node,key) in nodes')
-        svg(v-if='svgIcon(node)'
-          :key='key'
-          :viewBox='svgIcon(node).attrs.viewBox'
-          :width='getNodeSize(node, "width")'
-          :height='getNodeSize(node, "height")'
-          @click='emit("nodeClick",[$event,node])'
-          @touchend.passive='emit("nodeClick",[$event,node])'
-          @mousedown.prevent='emit("dragStart",[$event,key])'
-          @touchstart.prevent='emit("dragStart",[$event,key])'
-          :x='node.x - getNodeSize(node, "width") / 2'
-          :y='node.y - getNodeSize(node, "height") / 2'
-          :style='nodeStyle(node)'
-          :title="node.name"
-          :class='nodeClass(node,["node-svg"])'
-          v-html='svgIcon(node).data'
-          v-bind='node._svgAttrs'
-          )
-
-        image(v-else-if='imgNode(node)'
-          :key='key'
-          :xlink:href='imgNodeUrl(node)'
-          :width='imgNodeWidth(node, "width")'
-          :height='imgNodeHeight(node, "height")'
-          @click='emit("nodeClick",[$event,node])'
-          @touchend.passive='emit("nodeClick",[$event,node])'
-          @mousedown.prevent='emit("dragStart",[$event,key])'
-          @touchstart.prevent='emit("dragStart",[$event,key])'
-          :x="node.x"
-          :y="node.y"
-          :style='imgNodeStyle(node)'
-          :class="imgNodeClass(node)"
-          v-bind='node._svgAttrs'
-          )
-
-            //- default circle nodes
-        circle(v-else
-          :key='key'
-          :r="getNodeSize(node) / 2"
-          @click='emit("nodeClick",[$event,node])'
-          @touchend.passive='emit("nodeClick",[$event,node])'
-          @mousedown.prevent='emit("dragStart",[$event,key])'
-          @touchstart.prevent='emit("dragStart",[$event,key])'
-          :cx="node.x"
-          :cy="node.y"
-          :style='nodeStyle(node)'
-          :title="node.name"
-          :class="nodeClass(node)"
-          v-bind='node._svgAttrs'
-          )
-
-    //-> Links Labels
-    g.labels#link-labels(v-if='linkLabels')
-      text.link-label(v-for="link in links" :font-size="fontSize" )
-        textPath(v-bind:xlink:href="'#' + link.id" startOffset= "50%") {{ link.name }}
-
-    //- -> Node Labels
-    g.labels#node-labels( v-if="nodeLabels")
-      text.node-label(v-for="node in nodes"
-        :x='node.x + labelOffset.x'
-        :y='node.y + labelOffset.y'
-        :font-size="fontSize"
-        :class='(node._labelClass) ? node._labelClass : ""'
-        :stroke-width='fontSize / 8'
-      ) {{ node.name }}
+        button(style="width: 100px; height: 25px; backgroundColor: #14325C; color: #ffffff;") Message
 </template>
 <script>
 import svgExport from '../lib/js/svgExport.js'
@@ -130,7 +161,17 @@ export default {
     'labelOffset',
     'nodeSym'
   ],
+  data (){
+    return {
+      tooltipy: '0px',
+      tooltipx: '0px',
+      tooltipHeader: 'Test',
+      tooltipVisible: false,
+      selectedNode: {
 
+      }
+    }
+  },
   computed: {
     nodeSvg () {
       if (this.nodeSym) {
@@ -259,6 +300,16 @@ export default {
       let attrs = link._svgAttrs || {}
       attrs['stroke-width'] = attrs['stroke-width'] || this.linkWidth
       return attrs
+    },
+    mouseover(e, node){
+      this.tooltipy = `${e.pageY}px`;
+      this.tooltipx = `${e.pageX}px`;
+      this.tooltipVisible = true;
+      this.selectedNode = node;
+    },
+    mouseout(e, node){
+      this.tooltipVisible = false;
+      this.selectedNode = node;
     }
   }
 }

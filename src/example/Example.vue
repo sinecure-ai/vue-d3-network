@@ -8,8 +8,6 @@
           h1 {{ app.name }}
           h2.subtitle {{ app.des }}
     //-Links
-
-
 </template>
 
 <script>
