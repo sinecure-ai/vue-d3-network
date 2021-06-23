@@ -115,7 +115,7 @@
 
     div(
       id="tooltip"
-      v-bind:style="{ zIndex: 99999, position: 'absolute', top: tooltipy, left: tooltipx, visibility: tooltipVisible? 'visible': 'hidden', width: '200px', height: '300px', backgroundColor: '#ffffff'}"
+      v-bind:style="{ alignItems: 'center', textAlign: 'center', paddingTop: '10px', border: '1px solid #000', zIndex: 99999, position: 'absolute', top: tooltipy, left: tooltipx, visibility: tooltipVisible? 'visible': 'hidden', width: '200px', height: '300px', backgroundColor: '#ffffff'}"
     )
       div(
         id="tooltip-header"
