@@ -361,6 +361,12 @@ export default {
     nodeClick (event, node) {
       this.$emit('node-click', event, node)
     },
+    mouseOver (event, node) {
+      this.$emit('mouse-over', event, node)
+    },
+    mouseOut (event, node) {
+      this.$emit('mouse-out', event, node)
+    },
     linkClick (event, link) {
       this.$emit('link-click', event, link)
     },
