@@ -300,13 +300,14 @@ export default {
       return attrs
     },
     mouseover (e, node) {
-      console.log(e, node)
+      this.emit('mouseOver', [e, node])
       this.tooltipy = `${e.pageY}px`
       this.tooltipx = `${e.pageX}px`
       this.tooltipVisible = true
       this.selectedNode = node
     },
     mouseout (e, node) {
+      this.emit('mouseOut', [e, node])
       this.tooltipVisible = false
       this.selectedNode = node
     }
