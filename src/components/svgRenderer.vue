@@ -300,6 +300,7 @@ export default {
       return attrs
     },
     mouseover (e, node) {
+      console.log(e, node)
       this.tooltipy = `${e.pageY}px`
       this.tooltipx = `${e.pageX}px`
       this.tooltipVisible = true
