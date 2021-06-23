@@ -301,8 +301,8 @@ export default {
     },
     mouseover (e, node) {
       this.emit('mouseOver', [e, node])
-      this.tooltipy = `${e.pageY}px`
-      this.tooltipx = `${e.pageX}px`
+      this.tooltipy = `${e.clientY}px`
+      this.tooltipx = `${e.clientX}px`
       this.tooltipVisible = true
       this.selectedNode = node
     },
