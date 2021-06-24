@@ -95,7 +95,7 @@ const newNodeName = () => {
 
 // node formatter
 export const newNode = (nodeId) => {
-  return { id: nodeId, name: newNodeName(), imgObj: { url: 'https://storage.cloud.google.com/webapp-backend-file-storage-sinecure/userfiles/1/user-profile/c5ff79b4-d8a7-4fe5-82d9-489e212b0f9e.png' } }
+  return { id: nodeId, name: newNodeName(), url: 'https://www.linkedin.com/in/harish-kumar-chellappa-30708863/', imgObj: { url: 'https://storage.cloud.google.com/webapp-backend-file-storage-sinecure/userfiles/1/user-profile/c5ff79b4-d8a7-4fe5-82d9-489e212b0f9e.png' } }
 }
 
 // generates random nodes => [ nodes ]

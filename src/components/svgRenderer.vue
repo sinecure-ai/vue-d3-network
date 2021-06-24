@@ -51,8 +51,8 @@
             :viewBox='svgIcon(node).attrs.viewBox'
             :width='getNodeSize(node, "width")'
             :height='getNodeSize(node, "height")'
-            @click='emit("nodeClick",[$event,node])'
-            @touchend.passive='emit("nodeClick",[$event,node])'
+            @click='nodeSingleClick($event, node)'
+            @touchend.passive='nodeSingleClick($event, node)'
             @mousedown.prevent='emit("dragStart",[$event,key])'
             @touchstart.prevent='emit("dragStart",[$event,key])'
             :x='node.x - getNodeSize(node, "width") / 2'
@@ -69,8 +69,8 @@
             :xlink:href='imgNodeUrl(node)'
             :width='imgNodeWidth(node, "width")'
             :height='imgNodeHeight(node, "height")'
-            @click='emit("nodeClick",[$event,node])'
-            @touchend.passive='emit("nodeClick",[$event,node])'
+            @click='nodeSingleClick($event, node)'
+            @touchend.passive='nodeSingleClick($event, node)'
             @mousedown.prevent='emit("dragStart",[$event,key])'
             @touchstart.prevent='emit("dragStart",[$event,key])'
             @mouseover.prevent='(e) => { mouseover(e, node) }'
@@ -86,8 +86,8 @@
           circle(v-else
             :key='key'
             :r="getNodeSize(node) / 2"
-            @click='emit("nodeClick",[$event,node])'
-            @touchend.passive='emit("nodeClick",[$event,node])'
+            @click='nodeSingleClick($event, node)'
+            @touchend.passive='nodeSingleClick($event, node)'
             @mousedown.prevent='emit("dragStart",[$event,key])'
             @touchstart.prevent='emit("dragStart",[$event,key])'
             :cx="node.x"
@@ -135,10 +135,11 @@
         p(style="fontSize: 10px;") Bengaluru University
         p(style="fontSize: 10px;") Sinecure AI
         p(style="fontSize: 10px;") Bengaluru, India
-        button(style="width: 100px; height: 25px; backgroundColor: #14325C; color: #ffffff;") Message
+        button(@touchend.passive='emit("nodeClick",[$event,selectedNode])'   @click='emit("nodeClick",[$event,selectedNode])'  style="width: 100px; height: 25px; backgroundColor: #14325C; color: #ffffff;") View Profile
 </template>
 <script>
 import svgExport from '../lib/js/svgExport.js'
+import * as d3 from 'd3'
 
 export default {
   name: 'svg-renderer',
@@ -179,6 +180,17 @@ export default {
     }
   },
   methods: {
+    nodeSingleClick (e, node) {
+      if (this.selectedNode && this.selectedNode.id === node.id) {
+        this.selectedNode = null
+        this.tooltipVisible = false
+      } else {
+        this.tooltipy = `${e.clientY}px`
+        this.tooltipx = `${e.clientX}px`
+        this.tooltipVisible = true
+        this.selectedNode = node
+      }
+    },
     getNodeSize (node, side) {
       let size = node._size || this.nodeSize
       if (side) size = node['_' + side] || size
@@ -301,15 +313,11 @@ export default {
     },
     mouseover (e, node) {
       this.emit('mouseOver', [e, node])
-      this.tooltipy = `${e.clientY}px`
-      this.tooltipx = `${e.clientX}px`
-      this.tooltipVisible = true
-      this.selectedNode = node
+      d3.select(e.target).style('width', 100).style('height', 100)
     },
     mouseout (e, node) {
       this.emit('mouseOut', [e, node])
-      this.tooltipVisible = false
-      this.selectedNode = node
+      d3.select(e.target).style('width', 50).style('height', 50)
     }
   }
 }

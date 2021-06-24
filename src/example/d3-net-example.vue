@@ -184,28 +184,9 @@ export default {
       }
     },
     nodeClick (event, node) {
-      switch (this.tool) {
-        case 'killer':
-          this.removeNode(node.id)
-          break
-        case 'parent':
-          this.createParent(node)
-          break
-        case 'pin':
-          this.pinNode(node)
-          break
-        default: // selection tool
-          // is selected
-          if (this.selected[node.id]) {
-            this.unSelectNode(node.id)
-            // is not selected
-          } else {
-            this.selectNode(node)
-          }
-          this.selectNodesLinks()
-          break
-      }
-      this.updateSelection()
+         console.log(event, node)
+              window.open(node.url, "_blank");    
+
     },
     linkClick (event, link) {
       if (this.tool === 'killer') {
