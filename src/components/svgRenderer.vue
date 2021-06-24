@@ -187,7 +187,7 @@ export default {
     imgNodeWidth (node, side) {
       let size = node._size || this.nodeSize
       if (side) size = node['_' + side] || size
-      return size
+      return node.added ? size + 25 : size
     },
     imgNodeX (node) {
       return node.x - this.imgNodeWidth(node, 'width')
@@ -198,7 +198,7 @@ export default {
     imgNodeHeight (node, side) {
       let size = node._size || this.nodeSize
       if (side) size = node['_' + side] || size
-      return size
+      return node.added ? size + 25 : size
     },
     imgNode (node) {
       return node.imgObj
