@@ -51,8 +51,8 @@
             :viewBox='svgIcon(node).attrs.viewBox'
             :width='getNodeSize(node, "width")'
             :height='getNodeSize(node, "height")'
-            @click='nodeSingleClick($event, node)'
-            @touchend.passive='nodeSingleClick($event, node)'
+            @click='nodeSingleClick($event, node, key)'
+            @touchend.passive='nodeSingleClick($event, node, key)'
             @mousedown.prevent='emit("dragStart",[$event,key])'
             @touchstart.prevent='emit("dragStart",[$event,key])'
             :x='node.x - getNodeSize(node, "width") / 2'
@@ -69,8 +69,8 @@
             :xlink:href='imgNodeUrl(node)'
             :width='imgNodeWidth(node, "width")'
             :height='imgNodeHeight(node, "height")'
-            @click='nodeSingleClick($event, node)'
-            @touchend.passive='nodeSingleClick($event, node)'
+            @click='nodeSingleClick($event, node, key)'
+            @touchend.passive='nodeSingleClick($event, node, key)'
             @mousedown.prevent='emit("dragStart",[$event,key])'
             @touchstart.prevent='emit("dragStart",[$event,key])'
             @mouseover.prevent='(e) => { mouseover(e, node) }'
@@ -86,8 +86,8 @@
           circle(v-else
             :key='key'
             :r="getNodeSize(node) / 2"
-            @click='nodeSingleClick($event, node)'
-            @touchend.passive='nodeSingleClick($event, node)'
+            @click='nodeSingleClick($event, node, key)'
+            @touchend.passive='nodeSingleClick($event, node, key)'
             @mousedown.prevent='emit("dragStart",[$event,key])'
             @touchstart.prevent='emit("dragStart",[$event,key])'
             :cx="node.x"
@@ -135,7 +135,13 @@
         p(style="fontSize: 10px;") Bengaluru University
         p(style="fontSize: 10px;") Sinecure AI
         p(style="fontSize: 10px;") Bengaluru, India
-        button(@touchend.passive='emit("nodeClick",[$event,selectedNode])'   @click='emit("nodeClick",[$event,selectedNode])'  style="width: 100px; height: 25px; backgroundColor: #14325C; color: #ffffff;") View Profile
+        button(@touchend.passive='emit("nodeClick",[$event,selectedNode])'   @click='emit("nodeClick",[$event,selectedNode])'  style="margin-left: 10px; width: 90%; height: 25px; backgroundColor: #14325C; color: #ffffff;") View Profile
+        div(
+          id="tooltip-button-group"
+          style="width: 100%; padding: 5px;"
+        )
+          button(@touchend.passive='nodeSingleClickRemove($event, selectedNode)'   @click='nodeSingleClickRemove($event, selectedNode)'  style="width: 45%; height: 25px; backgroundColor: green; color: #ffffff;") Accept
+          button(@touchend.passive='nodeSingleClickRemove($event, selectedNode)'   @click='nodeSingleClickRemove($event, selectedNode)'  style="width: 45%; height: 25px; backgroundColor: red; color: #ffffff;") Reject
 </template>
 <script>
 import svgExport from '../lib/js/svgExport.js'
@@ -168,7 +174,8 @@ export default {
       tooltipVisible: false,
       selectedNode: {
 
-      }
+      },
+      selectedNodeIndex: null
     }
   },
   computed: {
@@ -180,16 +187,24 @@ export default {
     }
   },
   methods: {
-    nodeSingleClick (e, node) {
+    nodeSingleClick (e, node, index) {
       if (this.selectedNode && this.selectedNode.id === node.id) {
         this.selectedNode = null
         this.tooltipVisible = false
+        this.selectedNodeIndex = null;
       } else {
         this.tooltipy = `${e.clientY}px`
         this.tooltipx = `${e.clientX}px`
         this.tooltipVisible = true
         this.selectedNode = node
+        this.selectedNodeIndex = index;
       }
+    },
+    nodeSingleClickRemove(e, node){
+      this.nodes.splice(this.selectedNodeIndex, 1)
+      this.selectedNode = null
+      this.tooltipVisible = false
+      this.selectedNodeIndex = null;
     },
     getNodeSize (node, side) {
       let size = node._size || this.nodeSize

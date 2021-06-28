@@ -184,9 +184,7 @@ export default {
       }
     },
     nodeClick (event, node) {
-         console.log(event, node)
-              window.open(node.url, "_blank");    
-
+      window.open(node.url, '_blank')
     },
     linkClick (event, link) {
       if (this.tool === 'killer') {
