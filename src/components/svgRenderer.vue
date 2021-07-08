@@ -133,7 +133,7 @@
         h4() {{selectedNode.name}}
         div( id="job-container" v-bind:style="{paddingLeft: '10px', alignItems: 'left', textAlign: 'left'}" v-for="item in selectedNode.jobs" )
           p(style="fontSize: 14px; font-weight: 300;") {{item.job_title}}
-          p(style="fontSize: 10px;") {{item.graph_company.name}}
+          p(style="fontSize: 10px;") {{item.company.name}}
           p(style="fontSize: 10px;") {{item.job_started}} - {{item.job_ended != null? item.job_ended : 'present'}}
           hr()
         button(@touchend.passive='emit("nodeClick",[$event,selectedNode])'   @click='emit("nodeClick",[$event,selectedNode])'  style="margin-left: 10px; width: 90%; height: 25px; backgroundColor: #14325C; color: #ffffff;") View Profile

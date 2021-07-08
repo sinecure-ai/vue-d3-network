@@ -108,7 +108,7 @@ export const newNode = (nodeId) => {
         'job_ended': null,
         'job_started': '2013-03-01',
         'job_title': 'Architect',
-        'graph_company': {
+        'company': {
           'name': 'StrongLoop, Inc.- purchased by IBM'
         }
       },
@@ -117,7 +117,7 @@ export const newNode = (nodeId) => {
         'job_ended': '2012-02-01',
         'job_started': '2007-01-01',
         'job_title': 'Lead Developer',
-        'graph_company': {
+        'company': {
           'name': 'Terralever'
         }
       },
@@ -126,7 +126,7 @@ export const newNode = (nodeId) => {
         'job_ended': '2013-01-01',
         'job_started': '2012-02-01',
         'job_title': 'Co-Founder, CTO, Architect',
-        'graph_company': {
+        'company': {
           'name': 'Deployd'
         }
       }
