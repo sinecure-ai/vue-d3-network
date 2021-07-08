@@ -115,7 +115,7 @@
 
     div(
       id="tooltip"
-      v-bind:style="{ alignItems: 'center', textAlign: 'center', paddingTop: '10px', border: '1px solid #000', zIndex: 99999, position: 'absolute', top: tooltipy, left: tooltipx, visibility: tooltipVisible? 'visible': 'hidden', width: '200px', height: '300px', backgroundColor: '#ffffff'}"
+      v-bind:style="{ alignItems: 'center', textAlign: 'center', paddingTop: '10px', border: '1px solid #000', zIndex: 99999, position: 'absolute', top: tooltipy, left: tooltipx, visibility: tooltipVisible? 'visible': 'hidden', width: '250px', backgroundColor: '#ffffff'}"
     )
       div(
         id="tooltip-header"
@@ -130,11 +130,12 @@
       div(
         id="tooltip-title"
       )
-        h4() Harish kumar chellappa
-        h5() Full Stack Developer
-        p(style="fontSize: 10px;") Bengaluru University
-        p(style="fontSize: 10px;") Sinecure AI
-        p(style="fontSize: 10px;") Bengaluru, India
+        h4() {{selectedNode.name}}
+        div( id="job-container" v-bind:style="{paddingLeft: '10px', alignItems: 'left', textAlign: 'left'}" v-for="item in selectedNode.jobs" )
+          p(style="fontSize: 14px; font-weight: 300;") {{item.job_title}}
+          p(style="fontSize: 10px;") {{item.graph_company.name}}
+          p(style="fontSize: 10px;") {{item.job_started}} - {{item.job_ended != null? item.job_ended : 'present'}}
+          hr()
         button(@touchend.passive='emit("nodeClick",[$event,selectedNode])'   @click='emit("nodeClick",[$event,selectedNode])'  style="margin-left: 10px; width: 90%; height: 25px; backgroundColor: #14325C; color: #ffffff;") View Profile
         div(
           id="tooltip-button-group"
@@ -191,20 +192,20 @@ export default {
       if (this.selectedNode && this.selectedNode.id === node.id) {
         this.selectedNode = null
         this.tooltipVisible = false
-        this.selectedNodeIndex = null;
+        this.selectedNodeIndex = null
       } else {
         this.tooltipy = `${e.clientY}px`
         this.tooltipx = `${e.clientX}px`
         this.tooltipVisible = true
         this.selectedNode = node
-        this.selectedNodeIndex = index;
+        this.selectedNodeIndex = index
       }
     },
-    nodeSingleClickRemove(e, node){
+    nodeSingleClickRemove (e, node) {
       this.nodes.splice(this.selectedNodeIndex, 1)
       this.selectedNode = null
       this.tooltipVisible = false
-      this.selectedNodeIndex = null;
+      this.selectedNodeIndex = null
     },
     getNodeSize (node, side) {
       let size = node._size || this.nodeSize

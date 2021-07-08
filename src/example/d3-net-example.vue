@@ -66,6 +66,7 @@ export default {
     return data
   },
   mounted () {
+    console.log(this.$el)
     this.options.size.w = this.$el.clientWidth
     this.options.size.h = this.$el.clientHeight
   },

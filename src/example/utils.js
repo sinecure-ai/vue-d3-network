@@ -95,7 +95,43 @@ const newNodeName = () => {
 
 // node formatter
 export const newNode = (nodeId) => {
-  return { id: nodeId, name: newNodeName(), url: 'https://www.linkedin.com/in/harish-kumar-chellappa-30708863/', imgObj: { url: 'https://storage.cloud.google.com/webapp-backend-file-storage-sinecure/userfiles/1/user-profile/c5ff79b4-d8a7-4fe5-82d9-489e212b0f9e.png' } }
+  return {
+    id: nodeId,
+    name: newNodeName(),
+    url: 'https://www.linkedin.com/in/harish-kumar-chellappa-30708863/',
+    imgObj: {
+      url: 'https://storage.cloud.google.com/webapp-backend-file-storage-sinecure/userfiles/1/user-profile/c5ff79b4-d8a7-4fe5-82d9-489e212b0f9e.png'
+    },
+    jobs: [
+      {
+        'job_current': null,
+        'job_ended': null,
+        'job_started': '2013-03-01',
+        'job_title': 'Architect',
+        'graph_company': {
+          'name': 'StrongLoop, Inc.- purchased by IBM'
+        }
+      },
+      {
+        'job_current': null,
+        'job_ended': '2012-02-01',
+        'job_started': '2007-01-01',
+        'job_title': 'Lead Developer',
+        'graph_company': {
+          'name': 'Terralever'
+        }
+      },
+      {
+        'job_current': null,
+        'job_ended': '2013-01-01',
+        'job_started': '2012-02-01',
+        'job_title': 'Co-Founder, CTO, Architect',
+        'graph_company': {
+          'name': 'Deployd'
+        }
+      }
+    ]
+  }
 }
 
 // generates random nodes => [ nodes ]
