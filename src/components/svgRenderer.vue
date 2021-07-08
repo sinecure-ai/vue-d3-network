@@ -129,6 +129,7 @@
         )
       div(
         id="tooltip-title"
+        v-if="selectedNode && selectedNode.name"
       )
         h4() {{selectedNode.name}}
         div( id="jobs-container"  v-bind:style="{ maxHeight: '200px', overflowY: 'scroll' }" )
