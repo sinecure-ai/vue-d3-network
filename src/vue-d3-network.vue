@@ -273,7 +273,6 @@ export default {
         .alpha(0.5)
         // .alphaMin(0.05)
         .nodes(nodes)
-
       if (forces.Center !== false) sim.force('center', d3.forceCenter(this.center.x, this.center.y))
       if (forces.X !== false) {
         sim.force('X', d3.forceX(this.center.x).strength(forces.X))

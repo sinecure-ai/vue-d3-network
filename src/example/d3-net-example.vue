@@ -126,7 +126,7 @@ export default {
       this.linksSelected = {}
       this.nodes = utils.makeRandomNodes(this.settings.maxNodes)
       this.lastNodeId = this.nodes.length + 1
-      this.links = utils.makeRandomLinks(this.nodes, this.settings.maxLinks)
+      // this.links = utils.makeRandomLinks(this.nodes, this.settings.maxLinks)
       this.lastLinkId = this.links.length + 1
     },
     changeOptions (options) {
@@ -151,7 +151,7 @@ export default {
     removeNode (nodeId) {
       utils.removeNode(nodeId, this.nodes, (nodes) => {
         if (nodes) {
-          this.links = this.rebuildLinks(nodes)
+          // this.links = this.rebuildLinks(nodes)
           this.unSelectNode(nodeId)
           this.nodes = utils.rebuildNodes(this.links, nodes)
         }
@@ -201,13 +201,13 @@ export default {
     },
     createParent (node) {
       let nodeId = this.lastNodeId + 1
-      let linkId = this.lastLinkId + 1
+      // let linkId = this.lastLinkId + 1
       let nNode = utils.newNode(nodeId)
       nNode.x = node.x + 50
       nNode.y = node.y + 50
       this.nodes = this.nodes.concat(nNode)
       this.lastNodeId++
-      this.links = this.links.concat(utils.newLink(linkId, node.id, nodeId))
+      // this.links = this.links.concat(utils.newLink(linkId, node.id, nodeId))
       this.lastLinkId++
     },
     selectLink (link) {

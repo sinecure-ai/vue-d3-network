@@ -130,7 +130,8 @@ export const newNode = (nodeId) => {
           'name': 'Deployd'
         }
       }
-    ]
+    ],
+    pinned: true
   }
 }
 
