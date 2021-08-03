@@ -136,7 +136,7 @@
               //- default circle nodes
           circle(v-else
             :key='key'
-            :r="getNodeSize(node) / 2"
+            :r="getNodeSize(node) / 4"
             @click='nodeSingleClick($event, node, key)'
             @touchend.passive='nodeSingleClick($event, node, key)'
             @mousedown.prevent='emit("dragStart",[$event,key])'
