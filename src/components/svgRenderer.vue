@@ -14,6 +14,57 @@
       @touchstart.passive=''
       )
 
+      //- circle(
+      //-   :r="size.w / 6"
+      //-   :cx="size.w / 2.5"
+      //-   :cy="size.h / 2.5"
+      //-   :style="{ fill: '#ffb3ad', fillOpacity: 1}"
+      //- )
+      //- text(
+      //-   :x="size.w / 6"
+      //-   :y="size.h / 6"
+      //-   :style="{ fill: '#000000'}"
+      //- ) Javascript, HTML, CSS
+
+      //- circle(
+      //-   :r="size.w / 6"
+      //-   :cx="size.w / 1.5"
+      //-   :cy="size.h / 2.5"
+      //-   :style="{ fill: '#adffca', fillOpacity: 0.5}"
+      //- )
+
+      //- text(
+      //-   :x="size.w / 4"
+      //-   :y="size.h / 1.2"
+      //-   :style="{ fill: '#000000'}"
+      //- ) Python, MySql
+
+      //- circle(
+      //-   :r="size.w / 6"
+      //-   :cx="size.w / 2"
+      //-   :cy="size.h / 1.5"
+      //-   :style="{ fill: '#adbeff', fillOpacity: 0.5}"
+      //- )
+
+      //- text(
+      //-   :x="size.w / 1.2"
+      //-   :y="size.h / 6"
+      //-   :style="{ fill: '#000000'}"
+      //- ) CI/CD, Dev Ops
+
+      //- circle(
+      //-   :r="size.w / 4"
+      //-   :cx="size.w / 1.5"
+      //-   :cy="size.h / 1.5"
+      //-   :style="{ fill: '#c2c2c2'}"
+      //- )
+
+      //- text(
+      //-   :x="(size.w / 2) + 15"
+      //-   :y="(size.h / 2) + 15"
+      //-   :style="{ fill: '#000000'}"
+      //- ) Python,
+
       //- defs.paths#1-paths
       //-     clipPath(v-for='(node,key) in nodes'
       //-      :id="`pattern-${node.id}`")
@@ -75,8 +126,8 @@
             @touchstart.prevent='emit("dragStart",[$event,key])'
             @mouseover.prevent='(e) => { mouseover(e, node) }'
             @mouseout.prevent='(e) => { mouseout(e, node) }'
-            :x="node.x"
-            :y="node.y"
+            :x="node.x - 25"
+            :y="node.y - 25"
             :style='imgNodeStyle(node)'
             :class="imgNodeClass(node)"
             v-bind='node._svgAttrs'
@@ -106,8 +157,8 @@
       //- -> Node Labels
       g.labels#node-labels( v-if="nodeLabels")
         text.node-label(v-for="node in nodes"
-          :x='node.x + labelOffset.x'
-          :y='node.y + labelOffset.y'
+          :x='(node.x - 25) + labelOffset.x'
+          :y='(node.y - 15) + labelOffset.y'
           :font-size="fontSize"
           :class='(node._labelClass) ? node._labelClass : ""'
           :stroke-width='fontSize / 8'
