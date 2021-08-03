@@ -5,6 +5,9 @@
     ref='net'
     :net-nodes="nodes"
     :net-links="links"
+    :terms="terms"
+    :color="color"
+    :legends="legends"
     :selection="{nodes: selected, links: linksSelected}"
     :options="options"
     :linkCb="linkCb"
@@ -63,10 +66,24 @@ export default {
     data.toSvg = false
     data.options.icon = false
     data.nodeSym = null
+    data.terms = {
+      Python: 9,
+      Nodejs: 6,
+      SQL: 2
+    }
+    data.color = {
+      Python: 'red',
+      Nodejs: 'green',
+      SQL: 'blue'
+    }
+    data.legends = [
+      {id: 1, name: 'Python'},
+      {id: 2, name: 'Nodejs'},
+      {id: 3, name: 'SQL'}
+    ]
     return data
   },
   mounted () {
-    console.log(this.$el)
     this.options.size.w = this.$el.clientWidth
     this.options.size.h = this.$el.clientHeight
   },
@@ -124,7 +141,153 @@ export default {
     reset () {
       this.selected = {}
       this.linksSelected = {}
-      this.nodes = utils.makeRandomNodes(this.settings.maxNodes)
+        this.nodes = [
+          {
+            id: 1,
+            name: "Harish Kumar",
+            url: 'https://www.linkedin.com/in/harish-kumar-chellappa-30708863/',
+            imgObj: {
+              url: 'https://storage.cloud.google.com/webapp-backend-file-storage-sinecure/userfiles/1/user-profile/c5ff79b4-d8a7-4fe5-82d9-489e212b0f9e.png'
+            },
+            jobs: [
+              {
+                'job_current': null,
+                'job_ended': null,
+                'job_started': '2013-03-01',
+                'job_title': 'Architect',
+                'company': {
+                  'name': 'StrongLoop, Inc.- purchased by IBM'
+                }
+              },
+              {
+                'job_current': null,
+                'job_ended': '2012-02-01',
+                'job_started': '2007-01-01',
+                'job_title': 'Lead Developer',
+                'company': {
+                  'name': 'Terralever'
+                }
+              },
+              {
+                'job_current': null,
+                'job_ended': '2013-01-01',
+                'job_started': '2012-02-01',
+                'job_title': 'Co-Founder, CTO, Architect',
+                'company': {
+                  'name': 'Deployd'
+                }
+              }
+            ],
+            skills: [
+              {graph_skill: {
+                name: 'Python',
+                id: 1
+              }},
+              {graph_skill: {
+                name: 'Nodejs',
+                id: 1
+              }},
+              {graph_skill: {
+                name: 'SQL',
+                id: 1
+              }}
+            ],
+            pinned: true
+          },
+          {
+            id: 1,
+            name: "Gael Reinaudi",
+            url: 'https://www.linkedin.com/in/harish-kumar-chellappa-30708863/',
+            imgObj: {
+              url: 'https://storage.cloud.google.com/webapp-backend-file-storage-sinecure/userfiles/1/user-profile/c5ff79b4-d8a7-4fe5-82d9-489e212b0f9e.png'
+            },
+            jobs: [
+              {
+                'job_current': null,
+                'job_ended': null,
+                'job_started': '2013-03-01',
+                'job_title': 'Architect',
+                'company': {
+                  'name': 'StrongLoop, Inc.- purchased by IBM'
+                }
+              },
+              {
+                'job_current': null,
+                'job_ended': '2012-02-01',
+                'job_started': '2007-01-01',
+                'job_title': 'Lead Developer',
+                'company': {
+                  'name': 'Terralever'
+                }
+              },
+              {
+                'job_current': null,
+                'job_ended': '2013-01-01',
+                'job_started': '2012-02-01',
+                'job_title': 'Co-Founder, CTO, Architect',
+                'company': {
+                  'name': 'Deployd'
+                }
+              }
+            ],
+            skills: [
+              {graph_skill: {
+                name: 'Python',
+                id: 1
+              }},
+              {graph_skill: {
+                name: 'Nodejs',
+                id: 1
+              }}
+            ],
+            pinned: true
+          },
+          {
+            id: 1,
+            name: "Joel Wright",
+            url: 'https://www.linkedin.com/in/harish-kumar-chellappa-30708863/',
+            imgObj: {
+              url: 'https://storage.cloud.google.com/webapp-backend-file-storage-sinecure/userfiles/1/user-profile/c5ff79b4-d8a7-4fe5-82d9-489e212b0f9e.png'
+            },
+            jobs: [
+              {
+                'job_current': null,
+                'job_ended': null,
+                'job_started': '2013-03-01',
+                'job_title': 'Architect',
+                'company': {
+                  'name': 'StrongLoop, Inc.- purchased by IBM'
+                }
+              },
+              {
+                'job_current': null,
+                'job_ended': '2012-02-01',
+                'job_started': '2007-01-01',
+                'job_title': 'Lead Developer',
+                'company': {
+                  'name': 'Terralever'
+                }
+              },
+              {
+                'job_current': null,
+                'job_ended': '2013-01-01',
+                'job_started': '2012-02-01',
+                'job_title': 'Co-Founder, CTO, Architect',
+                'company': {
+                  'name': 'Deployd'
+                }
+              }
+            ],
+            skills: [
+              {graph_skill: {
+                name: 'Python',
+                id: 1
+              }}
+            ],
+            pinned: true
+          }
+
+      ]
       this.lastNodeId = this.nodes.length + 1
       // this.links = utils.makeRandomLinks(this.nodes, this.settings.maxLinks)
       this.lastLinkId = this.links.length + 1

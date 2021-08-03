@@ -95,6 +95,7 @@ const newNodeName = () => {
 
 // node formatter
 export const newNode = (nodeId) => {
+  
   return {
     id: nodeId,
     name: newNodeName(),
@@ -130,6 +131,20 @@ export const newNode = (nodeId) => {
           'name': 'Deployd'
         }
       }
+    ],
+    skills: [
+      {graph_skill: {
+        name: 'Python',
+        id: 1
+      }},
+      {graph_skill: {
+        name: 'Nodejs',
+        id: 1
+      }},
+      {graph_skill: {
+        name: 'SQL',
+        id: 1
+      }}
     ],
     pinned: true
   }

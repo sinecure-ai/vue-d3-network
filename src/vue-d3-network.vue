@@ -1,5 +1,6 @@
 <script>
 import * as forceSimulation from 'd3-force'
+import { pie } from 'd3-shape'
 import svgRenderer from './components/svgRenderer.vue'
 import canvasRenderer from './components/canvasRenderer.vue'
 import saveImage from './lib/js/saveImage.js'
@@ -14,6 +15,15 @@ export default {
   },
   props: {
     netNodes: {
+      type: Array
+    },
+    terms: {
+      type: Object
+    },
+    color: {
+      type: Object
+    },
+    legends: {
       type: Array
     },
     netLinks: {
@@ -112,7 +122,9 @@ export default {
       'offset',
       'padding',
       'nodeSize',
-      'noNodes'
+      'noNodes',
+      'color',
+      'legends'
     ]
 
     for (let prop of bindProps) {
@@ -245,6 +257,11 @@ export default {
           node.svgIcon = svgExport.svgElFromString(node.svgSym)
           if (!this.canvas && node.svgIcon && !node.svgObj) node.svgObj = svgExport.toObject(node.svgIcon)
         }
+        const pieD = pie()
+         .value((d) => {
+           return this.terms[d.graph_skill.name]
+          })
+        node.pie = pieD(node.skills)
         return node
       })
     },

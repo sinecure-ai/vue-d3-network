@@ -6060,12 +6060,142 @@ var initialRadius = 10,
 
 
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"78feb798-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=3fec4dc9&lang=pug&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"chart-root"}},[_c('svg',{ref:"svg",staticClass:"net-svg",attrs:{"xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){_vm.emit("dragEnd",[$event])},"&touchend":function($event){_vm.emit("dragEnd",[$event])},"&touchstart":function($event){}}},[_c('g',{staticClass:"links",attrs:{"id":"l-links"}},_vm._l((_vm.links),function(link){return _c('path',_vm._b({class:_vm.linkClass(link.id),style:(_vm.linkStyle(link)),attrs:{"d":_vm.linkPath(link),"id":link.id},on:{"click":function($event){_vm.emit("linkClick",[$event,link])},"&touchstart":function($event){_vm.emit("linkClick",[$event,link])}}},'path',_vm.linkAttrs(link),false))})),(!_vm.noNodes)?_c('g',{staticClass:"nodes",attrs:{"id":"l-nodes"}},[_vm._l((_vm.nodes),function(node,key){return [(_vm.svgIcon(node))?_c('svg',_vm._b({key:key,class:_vm.nodeClass(node,["node-svg"]),style:(_vm.nodeStyle(node)),attrs:{"viewBox":_vm.svgIcon(node).attrs.viewBox,"width":_vm.getNodeSize(node, "width"),"height":_vm.getNodeSize(node, "height"),"x":node.x - _vm.getNodeSize(node, "width") / 2,"y":node.y - _vm.getNodeSize(node, "height") / 2,"title":node.name},domProps:{"innerHTML":_vm._s(_vm.svgIcon(node).data)},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'svg',node._svgAttrs,false)):(_vm.imgNode(node))?_c('image',_vm._b({key:key,class:_vm.imgNodeClass(node),style:(_vm.imgNodeStyle(node)),attrs:{"xlink:href":_vm.imgNodeUrl(node),"width":_vm.imgNodeWidth(node, "width"),"height":_vm.imgNodeHeight(node, "height"),"x":node.x - 25,"y":node.y - 25},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"mouseover":function($event){$event.preventDefault();return (function (e) { _vm.mouseover(e, node) })($event)},"mouseout":function($event){$event.preventDefault();return (function (e) { _vm.mouseout(e, node) })($event)}}},'image',node._svgAttrs,false)):_c('circle',_vm._b({key:key,class:_vm.nodeClass(node),style:(_vm.nodeStyle(node)),attrs:{"r":_vm.getNodeSize(node) / 4,"cx":node.x,"cy":node.y,"title":node.name},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'circle',node._svgAttrs,false))]})],2):_vm._e(),(_vm.linkLabels)?_c('g',{staticClass:"labels",attrs:{"id":"link-labels"}},_vm._l((_vm.links),function(link){return _c('text',{staticClass:"link-label",attrs:{"font-size":_vm.fontSize}},[_c('textPath',{attrs:{"xlink:href":'#' + link.id,"startOffset":"50%"}},[_vm._v(_vm._s(link.name))])])})):_vm._e(),(_vm.nodeLabels)?_c('g',{staticClass:"labels",attrs:{"id":"node-labels"}},_vm._l((_vm.nodes),function(node){return _c('text',{staticClass:"node-label",class:(node._labelClass) ? node._labelClass : "",attrs:{"x":(node.x - 25) + _vm.labelOffset.x,"y":(node.y - 15) + _vm.labelOffset.y,"font-size":_vm.fontSize,"stroke-width":_vm.fontSize / 8}},[_vm._v(_vm._s(node.name))])})):_vm._e()]),_c('div',{style:({ alignItems: 'center', textAlign: 'center', paddingTop: '10px', border: '1px solid #000', zIndex: 99999, position: 'absolute', top: _vm.tooltipy, left: _vm.tooltipx, visibility: _vm.tooltipVisible? 'visible': 'hidden', width: '250px', backgroundColor: '#ffffff'}),attrs:{"id":"tooltip"}},[_c('div',{staticStyle:{"width":"100%"},attrs:{"id":"tooltip-header"}},[(_vm.selectedNode && _vm.selectedNode.imgObj)?_c('img',{staticStyle:{"width":"50px","height":"50px"},attrs:{"id":"tooltip-img","src":_vm.selectedNode.imgObj.url}}):_vm._e()]),(_vm.selectedNode && _vm.selectedNode.name)?_c('div',{attrs:{"id":"tooltip-title"}},[_c('h4',[_vm._v(_vm._s(_vm.selectedNode.name))]),_c('div',{style:({ maxHeight: '200px', overflowY: 'scroll' }),attrs:{"id":"jobs-container"}},_vm._l((_vm.selectedNode.jobs),function(item){return _c('div',{style:({paddingLeft: '10px', alignItems: 'left', textAlign: 'left'}),attrs:{"id":"job-container"}},[_c('p',{staticStyle:{"fontSize":"14px","font-weight":"300"}},[_vm._v(_vm._s(item.job_title))]),_c('p',{staticStyle:{"fontSize":"10px"}},[_vm._v(_vm._s(item.company.name))]),_c('p',{staticStyle:{"fontSize":"10px"}},[_vm._v(_vm._s(item.job_started)+" - "+_vm._s(item.job_ended != null? item.job_ended : 'present'))]),_c('hr')])})),_c('button',{staticStyle:{"margin-left":"10px","width":"90%","height":"25px","backgroundColor":"#14325C","color":"#ffffff"},on:{"&touchend":function($event){_vm.emit("nodeClick",[$event,_vm.selectedNode])},"click":function($event){_vm.emit("nodeClick",[$event,_vm.selectedNode])}}},[_vm._v("View Profile")]),_c('div',{staticStyle:{"width":"100%","padding":"5px"},attrs:{"id":"tooltip-button-group"}},[_c('button',{staticStyle:{"width":"45%","height":"25px","backgroundColor":"green","color":"#ffffff"},on:{"&touchend":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)},"click":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)}}},[_vm._v("Accept")]),_c('button',{staticStyle:{"width":"45%","height":"25px","backgroundColor":"red","color":"#ffffff"},on:{"&touchend":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)},"click":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)}}},[_vm._v("Reject")])])]):_vm._e()])])}
+// CONCATENATED MODULE: ./node_modules/d3-shape/src/array.js
+var slice = Array.prototype.slice;
+
+/* harmony default export */ var src_array = (function(x) {
+  return typeof x === "object" && "length" in x
+    ? x // Array, TypedArray, NodeList, array-like
+    : Array.from(x); // Map, Set, iterable, string, or anything else
+});
+
+// CONCATENATED MODULE: ./node_modules/d3-shape/src/constant.js
+/* harmony default export */ var src_constant = (function(x) {
+  return function constant() {
+    return x;
+  };
+});
+
+// CONCATENATED MODULE: ./node_modules/d3-shape/src/descending.js
+/* harmony default export */ var descending = (function(a, b) {
+  return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
+});
+
+// CONCATENATED MODULE: ./node_modules/d3-shape/src/identity.js
+/* harmony default export */ var identity = (function(d) {
+  return d;
+});
+
+// CONCATENATED MODULE: ./node_modules/d3-shape/src/math.js
+var abs = Math.abs;
+var atan2 = Math.atan2;
+var cos = Math.cos;
+var max = Math.max;
+var min = Math.min;
+var sin = Math.sin;
+var sqrt = Math.sqrt;
+
+var epsilon = 1e-12;
+var pi = Math.PI;
+var halfPi = pi / 2;
+var tau = 2 * pi;
+
+function acos(x) {
+  return x > 1 ? 0 : x < -1 ? pi : Math.acos(x);
+}
+
+function asin(x) {
+  return x >= 1 ? halfPi : x <= -1 ? -halfPi : Math.asin(x);
+}
+
+// CONCATENATED MODULE: ./node_modules/d3-shape/src/pie.js
+
+
+
+
+
+
+/* harmony default export */ var src_pie = (function() {
+  var value = identity,
+      sortValues = descending,
+      sort = null,
+      startAngle = src_constant(0),
+      endAngle = src_constant(tau),
+      padAngle = src_constant(0);
+
+  function pie(data) {
+    var i,
+        n = (data = src_array(data)).length,
+        j,
+        k,
+        sum = 0,
+        index = new Array(n),
+        arcs = new Array(n),
+        a0 = +startAngle.apply(this, arguments),
+        da = Math.min(tau, Math.max(-tau, endAngle.apply(this, arguments) - a0)),
+        a1,
+        p = Math.min(Math.abs(da) / n, padAngle.apply(this, arguments)),
+        pa = p * (da < 0 ? -1 : 1),
+        v;
+
+    for (i = 0; i < n; ++i) {
+      if ((v = arcs[index[i] = i] = +value(data[i], i, data)) > 0) {
+        sum += v;
+      }
+    }
+
+    // Optionally sort the arcs by previously-computed values or by data.
+    if (sortValues != null) index.sort(function(i, j) { return sortValues(arcs[i], arcs[j]); });
+    else if (sort != null) index.sort(function(i, j) { return sort(data[i], data[j]); });
+
+    // Compute the arcs! They are stored in the original data's order.
+    for (i = 0, k = sum ? (da - n * pa) / sum : 0; i < n; ++i, a0 = a1) {
+      j = index[i], v = arcs[j], a1 = a0 + (v > 0 ? v * k : 0) + pa, arcs[j] = {
+        data: data[j],
+        index: i,
+        value: v,
+        startAngle: a0,
+        endAngle: a1,
+        padAngle: p
+      };
+    }
+
+    return arcs;
+  }
+
+  pie.value = function(_) {
+    return arguments.length ? (value = typeof _ === "function" ? _ : src_constant(+_), pie) : value;
+  };
+
+  pie.sortValues = function(_) {
+    return arguments.length ? (sortValues = _, sort = null, pie) : sortValues;
+  };
+
+  pie.sort = function(_) {
+    return arguments.length ? (sort = _, sortValues = null, pie) : sort;
+  };
+
+  pie.startAngle = function(_) {
+    return arguments.length ? (startAngle = typeof _ === "function" ? _ : src_constant(+_), pie) : startAngle;
+  };
+
+  pie.endAngle = function(_) {
+    return arguments.length ? (endAngle = typeof _ === "function" ? _ : src_constant(+_), pie) : endAngle;
+  };
+
+  pie.padAngle = function(_) {
+    return arguments.length ? (padAngle = typeof _ === "function" ? _ : src_constant(+_), pie) : padAngle;
+  };
+
+  return pie;
+});
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"540be350-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=10e44ee8&lang=pug&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"chart-root"}},[_c('svg',{ref:"svg",staticClass:"net-svg",attrs:{"xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){_vm.emit("dragEnd",[$event])},"&touchend":function($event){_vm.emit("dragEnd",[$event])},"&touchstart":function($event){}}},[_vm._l((_vm.legends),function(item,index){return _c('g',{attrs:{"transform":("translate(" + ((index + 1) * 100) + ", 100)")}},[_c('rect',{attrs:{"id":item.id,"fill":_vm.color[item.name],"width":15,"height":15}}),_c('text',{attrs:{"x":20,"y":10,"font-size":_vm.fontSize,"stroke":"#000000"}},[_vm._v(_vm._s(item.name))])])}),_c('g',{staticClass:"links",attrs:{"id":"l-links"}},_vm._l((_vm.links),function(link){return _c('path',_vm._b({class:_vm.linkClass(link.id),style:(_vm.linkStyle(link)),attrs:{"d":_vm.linkPath(link),"id":link.id},on:{"click":function($event){_vm.emit("linkClick",[$event,link])},"&touchstart":function($event){_vm.emit("linkClick",[$event,link])}}},'path',_vm.linkAttrs(link),false))})),(!_vm.noNodes)?_c('g',{staticClass:"nodes",attrs:{"id":"l-nodes"}},[_vm._l((_vm.nodes),function(node,key){return [(_vm.svgIcon(node))?_c('svg',_vm._b({key:key,class:_vm.nodeClass(node,["node-svg"]),style:(_vm.nodeStyle(node)),attrs:{"viewBox":_vm.svgIcon(node).attrs.viewBox,"width":_vm.getNodeSize(node, "width"),"height":_vm.getNodeSize(node, "height"),"x":node.x - _vm.getNodeSize(node, "width") / 2,"y":node.y - _vm.getNodeSize(node, "height") / 2,"title":node.name},domProps:{"innerHTML":_vm._s(_vm.svgIcon(node).data)},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'svg',node._svgAttrs,false)):(_vm.imgNode(node))?_c('image',_vm._b({key:key,class:_vm.imgNodeClass(node),style:(_vm.imgNodeStyle(node)),attrs:{"xlink:href":_vm.imgNodeUrl(node),"width":_vm.imgNodeWidth(node, "width"),"height":_vm.imgNodeHeight(node, "height"),"x":node.x - 25,"y":node.y - 25},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"mouseover":function($event){$event.preventDefault();return (function (e) { _vm.mouseover(e, node) })($event)},"mouseout":function($event){$event.preventDefault();return (function (e) { _vm.mouseout(e, node) })($event)}}},'image',node._svgAttrs,false)):_c('circle',_vm._b({key:key,class:_vm.nodeClass(node),style:(_vm.nodeStyle(node)),attrs:{"r":_vm.getNodeSize(node) / 4,"cx":node.x,"cy":node.y,"title":node.name},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'circle',node._svgAttrs,false)),_vm._l((node.pie),function(item){return _c('g',{attrs:{"transform":("translate(" + (node.x) + ", " + (node.y) + ")")}},[_c('path',{attrs:{"d":_vm.arcGenerator(item),"id":item.data.graph_skill.id,"fill":_vm.color[item.data.graph_skill.name]}})])})]})],2):_vm._e(),(_vm.linkLabels)?_c('g',{staticClass:"labels",attrs:{"id":"link-labels"}},_vm._l((_vm.links),function(link){return _c('text',{staticClass:"link-label",attrs:{"font-size":_vm.fontSize}},[_c('textPath',{attrs:{"xlink:href":'#' + link.id,"startOffset":"50%"}},[_vm._v(_vm._s(link.name))])])})):_vm._e(),(_vm.nodeLabels)?_c('g',{staticClass:"labels",attrs:{"id":"node-labels"}},_vm._l((_vm.nodes),function(node){return _c('text',{staticClass:"node-label",class:(node._labelClass) ? node._labelClass : "",attrs:{"x":(node.x - 35) + _vm.labelOffset.x,"y":(node.y) + _vm.labelOffset.y,"font-size":_vm.fontSize,"stroke-width":_vm.fontSize / 8}},[_vm._v(_vm._s(node.name))])})):_vm._e()],2),_c('div',{style:({ alignItems: 'center', textAlign: 'center', paddingTop: '10px', border: '1px solid #000', zIndex: 99999, position: 'absolute', top: _vm.tooltipy, left: _vm.tooltipx, visibility: _vm.tooltipVisible? 'visible': 'hidden', width: '250px', backgroundColor: '#ffffff'}),attrs:{"id":"tooltip"}},[_c('div',{staticStyle:{"width":"100%"},attrs:{"id":"tooltip-header"}},[(_vm.selectedNode && _vm.selectedNode.imgObj)?_c('img',{staticStyle:{"width":"50px","height":"50px"},attrs:{"id":"tooltip-img","src":_vm.selectedNode.imgObj.url}}):_vm._e()]),(_vm.selectedNode && _vm.selectedNode.name)?_c('div',{attrs:{"id":"tooltip-title"}},[_c('h4',[_vm._v(_vm._s(_vm.selectedNode.name))]),_c('div',{style:({ maxHeight: '200px', overflowY: 'scroll' }),attrs:{"id":"jobs-container"}},_vm._l((_vm.selectedNode.jobs),function(item){return _c('div',{style:({paddingLeft: '10px', alignItems: 'left', textAlign: 'left'}),attrs:{"id":"job-container"}},[_c('p',{staticStyle:{"fontSize":"14px","font-weight":"300"}},[_vm._v(_vm._s(item.job_title))]),_c('p',{staticStyle:{"fontSize":"10px"}},[_vm._v(_vm._s(item.company.name))]),_c('p',{staticStyle:{"fontSize":"10px"}},[_vm._v(_vm._s(item.job_started)+" - "+_vm._s(item.job_ended != null? item.job_ended : 'present'))]),_c('hr')])})),_c('button',{staticStyle:{"margin-left":"10px","width":"90%","height":"25px","backgroundColor":"#14325C","color":"#ffffff"},on:{"&touchend":function($event){_vm.emit("nodeClick",[$event,_vm.selectedNode])},"click":function($event){_vm.emit("nodeClick",[$event,_vm.selectedNode])}}},[_vm._v("View Profile")]),_c('div',{staticStyle:{"width":"100%","padding":"5px"},attrs:{"id":"tooltip-button-group"}},[_c('button',{staticStyle:{"width":"45%","height":"25px","backgroundColor":"green","color":"#ffffff"},on:{"&touchend":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)},"click":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)}}},[_vm._v("Accept")]),_c('button',{staticStyle:{"width":"45%","height":"25px","backgroundColor":"red","color":"#ffffff"},on:{"&touchend":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)},"click":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)}}},[_vm._v("Reject")])])]):_vm._e()])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=3fec4dc9&lang=pug&
+// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=10e44ee8&lang=pug&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js
 var parse_int = __webpack_require__("e814");
@@ -6534,7 +6664,7 @@ EnterNode.prototype = {
 };
 
 // CONCATENATED MODULE: ./node_modules/d3-selection/src/constant.js
-/* harmony default export */ var src_constant = (function(x) {
+/* harmony default export */ var d3_selection_src_constant = (function(x) {
   return function() {
     return x;
   };
@@ -6626,7 +6756,7 @@ function datum(node) {
       parents = this._parents,
       groups = this._groups;
 
-  if (typeof value !== "function") value = src_constant(value);
+  if (typeof value !== "function") value = d3_selection_src_constant(value);
 
   for (var m = groups.length, update = new Array(m), enter = new Array(m), exit = new Array(m), j = 0; j < m; ++j) {
     var parent = parents[j],
@@ -6734,7 +6864,7 @@ function arraylike(data) {
 // CONCATENATED MODULE: ./node_modules/d3-selection/src/selection/sort.js
 
 
-/* harmony default export */ var sort = (function(compare) {
+/* harmony default export */ var selection_sort = (function(compare) {
   if (!compare) compare = ascending;
 
   function compareNode(a, b) {
@@ -7373,7 +7503,7 @@ Selection.prototype = selection_selection.prototype = {
   merge: selection_merge,
   selection: selection_selection_selection,
   order: order,
-  sort: sort,
+  sort: selection_sort,
   call: call,
   nodes: selection_nodes,
   node: selection_node,
@@ -7986,7 +8116,7 @@ function isNumberArray(x) {
 
 
 
-/* harmony default export */ var src_array = (function(a, b) {
+/* harmony default export */ var d3_interpolate_src_array = (function(a, b) {
   return (isNumberArray(b) ? numberArray : genericArray)(a, b);
 });
 
@@ -8358,7 +8488,7 @@ function schedule_create(node, id, self) {
 // CONCATENATED MODULE: ./node_modules/d3-interpolate/src/transform/decompose.js
 var degrees = 180 / Math.PI;
 
-var identity = {
+var decompose_identity = {
   translateX: 0,
   translateY: 0,
   rotate: 0,
@@ -8391,14 +8521,14 @@ var svgNode;
 /* eslint-disable no-undef */
 function parseCss(value) {
   const m = new (typeof DOMMatrix === "function" ? DOMMatrix : WebKitCSSMatrix)(value + "");
-  return m.isIdentity ? identity : decompose(m.a, m.b, m.c, m.d, m.e, m.f);
+  return m.isIdentity ? decompose_identity : decompose(m.a, m.b, m.c, m.d, m.e, m.f);
 }
 
 function parseSvg(value) {
-  if (value == null) return identity;
+  if (value == null) return decompose_identity;
   if (!svgNode) svgNode = document.createElementNS("http://www.w3.org/2000/svg", "g");
   svgNode.setAttribute("transform", value);
-  if (!(value = svgNode.transform.baseVal.consolidate())) return identity;
+  if (!(value = svgNode.transform.baseVal.consolidate())) return decompose_identity;
   value = value.matrix;
   return decompose(value.a, value.b, value.c, value.d, value.e, value.f);
 }
@@ -9325,7 +9455,7 @@ var MODE_DRAG = {name: "drag"},
     MODE_HANDLE = {name: "handle"},
     MODE_CENTER = {name: "center"};
 
-const {abs, max, min} = Math;
+const {abs: brush_abs, max: brush_max, min: brush_min} = Math;
 
 function number1(e) {
   return [+e[0], +e[1]];
@@ -9681,11 +9811,11 @@ function brush_brush(dim) {
       if (selection) moving = true;
       const pts = [points[0], points[1] || points[0]];
       state.selection = selection = [[
-          w0 = dim === Y ? W : min(pts[0][0], pts[1][0]),
-          n0 = dim === X ? N : min(pts[0][1], pts[1][1])
+          w0 = dim === Y ? W : brush_min(pts[0][0], pts[1][0]),
+          n0 = dim === X ? N : brush_min(pts[0][1], pts[1][1])
         ], [
-          e0 = dim === Y ? E : max(pts[0][0], pts[1][0]),
-          s0 = dim === X ? S : max(pts[0][1], pts[1][1])
+          e0 = dim === Y ? E : brush_max(pts[0][0], pts[1][0]),
+          s0 = dim === X ? S : brush_max(pts[0][1], pts[1][1])
         ]];
       if (points.length > 1) move(event);
     } else {
@@ -9730,7 +9860,7 @@ function brush_brush(dim) {
       }
       if (shifting && !lockX && !lockY && points.length === 1) {
         const point = points[0];
-        if (abs(point.cur[0] - point[0]) > abs(point.cur[1] - point[1]))
+        if (brush_abs(point.cur[0] - point[0]) > brush_abs(point.cur[1] - point[1]))
           lockY = true;
         else
           lockX = true;
@@ -9752,25 +9882,25 @@ function brush_brush(dim) {
       switch (mode) {
         case MODE_SPACE:
         case MODE_DRAG: {
-          if (signX) dx = max(W - w0, min(E - e0, dx)), w1 = w0 + dx, e1 = e0 + dx;
-          if (signY) dy = max(N - n0, min(S - s0, dy)), n1 = n0 + dy, s1 = s0 + dy;
+          if (signX) dx = brush_max(W - w0, brush_min(E - e0, dx)), w1 = w0 + dx, e1 = e0 + dx;
+          if (signY) dy = brush_max(N - n0, brush_min(S - s0, dy)), n1 = n0 + dy, s1 = s0 + dy;
           break;
         }
         case MODE_HANDLE: {
           if (points[1]) {
-            if (signX) w1 = max(W, min(E, points[0][0])), e1 = max(W, min(E, points[1][0])), signX = 1;
-            if (signY) n1 = max(N, min(S, points[0][1])), s1 = max(N, min(S, points[1][1])), signY = 1;
+            if (signX) w1 = brush_max(W, brush_min(E, points[0][0])), e1 = brush_max(W, brush_min(E, points[1][0])), signX = 1;
+            if (signY) n1 = brush_max(N, brush_min(S, points[0][1])), s1 = brush_max(N, brush_min(S, points[1][1])), signY = 1;
           } else {
-            if (signX < 0) dx = max(W - w0, min(E - w0, dx)), w1 = w0 + dx, e1 = e0;
-            else if (signX > 0) dx = max(W - e0, min(E - e0, dx)), w1 = w0, e1 = e0 + dx;
-            if (signY < 0) dy = max(N - n0, min(S - n0, dy)), n1 = n0 + dy, s1 = s0;
-            else if (signY > 0) dy = max(N - s0, min(S - s0, dy)), n1 = n0, s1 = s0 + dy;
+            if (signX < 0) dx = brush_max(W - w0, brush_min(E - w0, dx)), w1 = w0 + dx, e1 = e0;
+            else if (signX > 0) dx = brush_max(W - e0, brush_min(E - e0, dx)), w1 = w0, e1 = e0 + dx;
+            if (signY < 0) dy = brush_max(N - n0, brush_min(S - n0, dy)), n1 = n0 + dy, s1 = s0;
+            else if (signY > 0) dy = brush_max(N - s0, brush_min(S - s0, dy)), n1 = n0, s1 = s0 + dy;
           }
           break;
         }
         case MODE_CENTER: {
-          if (signX) w1 = max(W, min(E, w0 - dx * signX)), e1 = max(W, min(E, e0 + dx * signX));
-          if (signY) n1 = max(N, min(S, n0 - dy * signY)), s1 = max(N, min(S, s0 + dy * signY));
+          if (signX) w1 = brush_max(W, brush_min(E, w0 - dx * signX)), e1 = brush_max(W, brush_min(E, e0 + dx * signX));
+          if (signY) n1 = brush_max(N, brush_min(S, n0 - dy * signY)), s1 = brush_max(N, brush_min(S, s0 + dy * signY));
           break;
         }
       }
@@ -10593,6 +10723,401 @@ function defaultConstrain(transform, extent, translateExtent) {
 
 
 
+// CONCATENATED MODULE: ./node_modules/d3-path/src/path.js
+const path_pi = Math.PI,
+    path_tau = 2 * path_pi,
+    path_epsilon = 1e-6,
+    tauEpsilon = path_tau - path_epsilon;
+
+function Path() {
+  this._x0 = this._y0 = // start of current subpath
+  this._x1 = this._y1 = null; // end of current subpath
+  this._ = "";
+}
+
+function path() {
+  return new Path;
+}
+
+Path.prototype = path.prototype = {
+  constructor: Path,
+  moveTo: function(x, y) {
+    this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y);
+  },
+  closePath: function() {
+    if (this._x1 !== null) {
+      this._x1 = this._x0, this._y1 = this._y0;
+      this._ += "Z";
+    }
+  },
+  lineTo: function(x, y) {
+    this._ += "L" + (this._x1 = +x) + "," + (this._y1 = +y);
+  },
+  quadraticCurveTo: function(x1, y1, x, y) {
+    this._ += "Q" + (+x1) + "," + (+y1) + "," + (this._x1 = +x) + "," + (this._y1 = +y);
+  },
+  bezierCurveTo: function(x1, y1, x2, y2, x, y) {
+    this._ += "C" + (+x1) + "," + (+y1) + "," + (+x2) + "," + (+y2) + "," + (this._x1 = +x) + "," + (this._y1 = +y);
+  },
+  arcTo: function(x1, y1, x2, y2, r) {
+    x1 = +x1, y1 = +y1, x2 = +x2, y2 = +y2, r = +r;
+    var x0 = this._x1,
+        y0 = this._y1,
+        x21 = x2 - x1,
+        y21 = y2 - y1,
+        x01 = x0 - x1,
+        y01 = y0 - y1,
+        l01_2 = x01 * x01 + y01 * y01;
+
+    // Is the radius negative? Error.
+    if (r < 0) throw new Error("negative radius: " + r);
+
+    // Is this path empty? Move to (x1,y1).
+    if (this._x1 === null) {
+      this._ += "M" + (this._x1 = x1) + "," + (this._y1 = y1);
+    }
+
+    // Or, is (x1,y1) coincident with (x0,y0)? Do nothing.
+    else if (!(l01_2 > path_epsilon));
+
+    // Or, are (x0,y0), (x1,y1) and (x2,y2) collinear?
+    // Equivalently, is (x1,y1) coincident with (x2,y2)?
+    // Or, is the radius zero? Line to (x1,y1).
+    else if (!(Math.abs(y01 * x21 - y21 * x01) > path_epsilon) || !r) {
+      this._ += "L" + (this._x1 = x1) + "," + (this._y1 = y1);
+    }
+
+    // Otherwise, draw an arc!
+    else {
+      var x20 = x2 - x0,
+          y20 = y2 - y0,
+          l21_2 = x21 * x21 + y21 * y21,
+          l20_2 = x20 * x20 + y20 * y20,
+          l21 = Math.sqrt(l21_2),
+          l01 = Math.sqrt(l01_2),
+          l = r * Math.tan((path_pi - Math.acos((l21_2 + l01_2 - l20_2) / (2 * l21 * l01))) / 2),
+          t01 = l / l01,
+          t21 = l / l21;
+
+      // If the start tangent is not coincident with (x0,y0), line to.
+      if (Math.abs(t01 - 1) > path_epsilon) {
+        this._ += "L" + (x1 + t01 * x01) + "," + (y1 + t01 * y01);
+      }
+
+      this._ += "A" + r + "," + r + ",0,0," + (+(y01 * x20 > x01 * y20)) + "," + (this._x1 = x1 + t21 * x21) + "," + (this._y1 = y1 + t21 * y21);
+    }
+  },
+  arc: function(x, y, r, a0, a1, ccw) {
+    x = +x, y = +y, r = +r, ccw = !!ccw;
+    var dx = r * Math.cos(a0),
+        dy = r * Math.sin(a0),
+        x0 = x + dx,
+        y0 = y + dy,
+        cw = 1 ^ ccw,
+        da = ccw ? a0 - a1 : a1 - a0;
+
+    // Is the radius negative? Error.
+    if (r < 0) throw new Error("negative radius: " + r);
+
+    // Is this path empty? Move to (x0,y0).
+    if (this._x1 === null) {
+      this._ += "M" + x0 + "," + y0;
+    }
+
+    // Or, is (x0,y0) not coincident with the previous point? Line to (x0,y0).
+    else if (Math.abs(this._x1 - x0) > path_epsilon || Math.abs(this._y1 - y0) > path_epsilon) {
+      this._ += "L" + x0 + "," + y0;
+    }
+
+    // Is this arc empty? We’re done.
+    if (!r) return;
+
+    // Does the angle go the wrong way? Flip the direction.
+    if (da < 0) da = da % path_tau + path_tau;
+
+    // Is this a complete circle? Draw two arcs to complete the circle.
+    if (da > tauEpsilon) {
+      this._ += "A" + r + "," + r + ",0,1," + cw + "," + (x - dx) + "," + (y - dy) + "A" + r + "," + r + ",0,1," + cw + "," + (this._x1 = x0) + "," + (this._y1 = y0);
+    }
+
+    // Is this arc non-empty? Draw an arc!
+    else if (da > path_epsilon) {
+      this._ += "A" + r + "," + r + ",0," + (+(da >= path_pi)) + "," + cw + "," + (this._x1 = x + r * Math.cos(a1)) + "," + (this._y1 = y + r * Math.sin(a1));
+    }
+  },
+  rect: function(x, y, w, h) {
+    this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y) + "h" + (+w) + "v" + (+h) + "h" + (-w) + "Z";
+  },
+  toString: function() {
+    return this._;
+  }
+};
+
+/* harmony default export */ var src_path = (path);
+
+// CONCATENATED MODULE: ./node_modules/d3-shape/src/arc.js
+
+
+
+
+function arcInnerRadius(d) {
+  return d.innerRadius;
+}
+
+function arcOuterRadius(d) {
+  return d.outerRadius;
+}
+
+function arcStartAngle(d) {
+  return d.startAngle;
+}
+
+function arcEndAngle(d) {
+  return d.endAngle;
+}
+
+function arcPadAngle(d) {
+  return d && d.padAngle; // Note: optional!
+}
+
+function intersect(x0, y0, x1, y1, x2, y2, x3, y3) {
+  var x10 = x1 - x0, y10 = y1 - y0,
+      x32 = x3 - x2, y32 = y3 - y2,
+      t = y32 * x10 - x32 * y10;
+  if (t * t < epsilon) return;
+  t = (x32 * (y0 - y2) - y32 * (x0 - x2)) / t;
+  return [x0 + t * x10, y0 + t * y10];
+}
+
+// Compute perpendicular offset line of length rc.
+// http://mathworld.wolfram.com/Circle-LineIntersection.html
+function cornerTangents(x0, y0, x1, y1, r1, rc, cw) {
+  var x01 = x0 - x1,
+      y01 = y0 - y1,
+      lo = (cw ? rc : -rc) / sqrt(x01 * x01 + y01 * y01),
+      ox = lo * y01,
+      oy = -lo * x01,
+      x11 = x0 + ox,
+      y11 = y0 + oy,
+      x10 = x1 + ox,
+      y10 = y1 + oy,
+      x00 = (x11 + x10) / 2,
+      y00 = (y11 + y10) / 2,
+      dx = x10 - x11,
+      dy = y10 - y11,
+      d2 = dx * dx + dy * dy,
+      r = r1 - rc,
+      D = x11 * y10 - x10 * y11,
+      d = (dy < 0 ? -1 : 1) * sqrt(max(0, r * r * d2 - D * D)),
+      cx0 = (D * dy - dx * d) / d2,
+      cy0 = (-D * dx - dy * d) / d2,
+      cx1 = (D * dy + dx * d) / d2,
+      cy1 = (-D * dx + dy * d) / d2,
+      dx0 = cx0 - x00,
+      dy0 = cy0 - y00,
+      dx1 = cx1 - x00,
+      dy1 = cy1 - y00;
+
+  // Pick the closer of the two intersection points.
+  // TODO Is there a faster way to determine which intersection to use?
+  if (dx0 * dx0 + dy0 * dy0 > dx1 * dx1 + dy1 * dy1) cx0 = cx1, cy0 = cy1;
+
+  return {
+    cx: cx0,
+    cy: cy0,
+    x01: -ox,
+    y01: -oy,
+    x11: cx0 * (r1 / r - 1),
+    y11: cy0 * (r1 / r - 1)
+  };
+}
+
+/* harmony default export */ var src_arc = (function() {
+  var innerRadius = arcInnerRadius,
+      outerRadius = arcOuterRadius,
+      cornerRadius = src_constant(0),
+      padRadius = null,
+      startAngle = arcStartAngle,
+      endAngle = arcEndAngle,
+      padAngle = arcPadAngle,
+      context = null;
+
+  function arc() {
+    var buffer,
+        r,
+        r0 = +innerRadius.apply(this, arguments),
+        r1 = +outerRadius.apply(this, arguments),
+        a0 = startAngle.apply(this, arguments) - halfPi,
+        a1 = endAngle.apply(this, arguments) - halfPi,
+        da = abs(a1 - a0),
+        cw = a1 > a0;
+
+    if (!context) context = buffer = src_path();
+
+    // Ensure that the outer radius is always larger than the inner radius.
+    if (r1 < r0) r = r1, r1 = r0, r0 = r;
+
+    // Is it a point?
+    if (!(r1 > epsilon)) context.moveTo(0, 0);
+
+    // Or is it a circle or annulus?
+    else if (da > tau - epsilon) {
+      context.moveTo(r1 * cos(a0), r1 * sin(a0));
+      context.arc(0, 0, r1, a0, a1, !cw);
+      if (r0 > epsilon) {
+        context.moveTo(r0 * cos(a1), r0 * sin(a1));
+        context.arc(0, 0, r0, a1, a0, cw);
+      }
+    }
+
+    // Or is it a circular or annular sector?
+    else {
+      var a01 = a0,
+          a11 = a1,
+          a00 = a0,
+          a10 = a1,
+          da0 = da,
+          da1 = da,
+          ap = padAngle.apply(this, arguments) / 2,
+          rp = (ap > epsilon) && (padRadius ? +padRadius.apply(this, arguments) : sqrt(r0 * r0 + r1 * r1)),
+          rc = min(abs(r1 - r0) / 2, +cornerRadius.apply(this, arguments)),
+          rc0 = rc,
+          rc1 = rc,
+          t0,
+          t1;
+
+      // Apply padding? Note that since r1 ≥ r0, da1 ≥ da0.
+      if (rp > epsilon) {
+        var p0 = asin(rp / r0 * sin(ap)),
+            p1 = asin(rp / r1 * sin(ap));
+        if ((da0 -= p0 * 2) > epsilon) p0 *= (cw ? 1 : -1), a00 += p0, a10 -= p0;
+        else da0 = 0, a00 = a10 = (a0 + a1) / 2;
+        if ((da1 -= p1 * 2) > epsilon) p1 *= (cw ? 1 : -1), a01 += p1, a11 -= p1;
+        else da1 = 0, a01 = a11 = (a0 + a1) / 2;
+      }
+
+      var x01 = r1 * cos(a01),
+          y01 = r1 * sin(a01),
+          x10 = r0 * cos(a10),
+          y10 = r0 * sin(a10);
+
+      // Apply rounded corners?
+      if (rc > epsilon) {
+        var x11 = r1 * cos(a11),
+            y11 = r1 * sin(a11),
+            x00 = r0 * cos(a00),
+            y00 = r0 * sin(a00),
+            oc;
+
+        // Restrict the corner radius according to the sector angle.
+        if (da < pi && (oc = intersect(x01, y01, x00, y00, x11, y11, x10, y10))) {
+          var ax = x01 - oc[0],
+              ay = y01 - oc[1],
+              bx = x11 - oc[0],
+              by = y11 - oc[1],
+              kc = 1 / sin(acos((ax * bx + ay * by) / (sqrt(ax * ax + ay * ay) * sqrt(bx * bx + by * by))) / 2),
+              lc = sqrt(oc[0] * oc[0] + oc[1] * oc[1]);
+          rc0 = min(rc, (r0 - lc) / (kc - 1));
+          rc1 = min(rc, (r1 - lc) / (kc + 1));
+        }
+      }
+
+      // Is the sector collapsed to a line?
+      if (!(da1 > epsilon)) context.moveTo(x01, y01);
+
+      // Does the sector’s outer ring have rounded corners?
+      else if (rc1 > epsilon) {
+        t0 = cornerTangents(x00, y00, x01, y01, r1, rc1, cw);
+        t1 = cornerTangents(x11, y11, x10, y10, r1, rc1, cw);
+
+        context.moveTo(t0.cx + t0.x01, t0.cy + t0.y01);
+
+        // Have the corners merged?
+        if (rc1 < rc) context.arc(t0.cx, t0.cy, rc1, atan2(t0.y01, t0.x01), atan2(t1.y01, t1.x01), !cw);
+
+        // Otherwise, draw the two corners and the ring.
+        else {
+          context.arc(t0.cx, t0.cy, rc1, atan2(t0.y01, t0.x01), atan2(t0.y11, t0.x11), !cw);
+          context.arc(0, 0, r1, atan2(t0.cy + t0.y11, t0.cx + t0.x11), atan2(t1.cy + t1.y11, t1.cx + t1.x11), !cw);
+          context.arc(t1.cx, t1.cy, rc1, atan2(t1.y11, t1.x11), atan2(t1.y01, t1.x01), !cw);
+        }
+      }
+
+      // Or is the outer ring just a circular arc?
+      else context.moveTo(x01, y01), context.arc(0, 0, r1, a01, a11, !cw);
+
+      // Is there no inner ring, and it’s a circular sector?
+      // Or perhaps it’s an annular sector collapsed due to padding?
+      if (!(r0 > epsilon) || !(da0 > epsilon)) context.lineTo(x10, y10);
+
+      // Does the sector’s inner ring (or point) have rounded corners?
+      else if (rc0 > epsilon) {
+        t0 = cornerTangents(x10, y10, x11, y11, r0, -rc0, cw);
+        t1 = cornerTangents(x01, y01, x00, y00, r0, -rc0, cw);
+
+        context.lineTo(t0.cx + t0.x01, t0.cy + t0.y01);
+
+        // Have the corners merged?
+        if (rc0 < rc) context.arc(t0.cx, t0.cy, rc0, atan2(t0.y01, t0.x01), atan2(t1.y01, t1.x01), !cw);
+
+        // Otherwise, draw the two corners and the ring.
+        else {
+          context.arc(t0.cx, t0.cy, rc0, atan2(t0.y01, t0.x01), atan2(t0.y11, t0.x11), !cw);
+          context.arc(0, 0, r0, atan2(t0.cy + t0.y11, t0.cx + t0.x11), atan2(t1.cy + t1.y11, t1.cx + t1.x11), cw);
+          context.arc(t1.cx, t1.cy, rc0, atan2(t1.y11, t1.x11), atan2(t1.y01, t1.x01), !cw);
+        }
+      }
+
+      // Or is the inner ring just a circular arc?
+      else context.arc(0, 0, r0, a10, a00, cw);
+    }
+
+    context.closePath();
+
+    if (buffer) return context = null, buffer + "" || null;
+  }
+
+  arc.centroid = function() {
+    var r = (+innerRadius.apply(this, arguments) + +outerRadius.apply(this, arguments)) / 2,
+        a = (+startAngle.apply(this, arguments) + +endAngle.apply(this, arguments)) / 2 - pi / 2;
+    return [cos(a) * r, sin(a) * r];
+  };
+
+  arc.innerRadius = function(_) {
+    return arguments.length ? (innerRadius = typeof _ === "function" ? _ : src_constant(+_), arc) : innerRadius;
+  };
+
+  arc.outerRadius = function(_) {
+    return arguments.length ? (outerRadius = typeof _ === "function" ? _ : src_constant(+_), arc) : outerRadius;
+  };
+
+  arc.cornerRadius = function(_) {
+    return arguments.length ? (cornerRadius = typeof _ === "function" ? _ : src_constant(+_), arc) : cornerRadius;
+  };
+
+  arc.padRadius = function(_) {
+    return arguments.length ? (padRadius = _ == null ? null : typeof _ === "function" ? _ : src_constant(+_), arc) : padRadius;
+  };
+
+  arc.startAngle = function(_) {
+    return arguments.length ? (startAngle = typeof _ === "function" ? _ : src_constant(+_), arc) : startAngle;
+  };
+
+  arc.endAngle = function(_) {
+    return arguments.length ? (endAngle = typeof _ === "function" ? _ : src_constant(+_), arc) : endAngle;
+  };
+
+  arc.padAngle = function(_) {
+    return arguments.length ? (padAngle = typeof _ === "function" ? _ : src_constant(+_), arc) : padAngle;
+  };
+
+  arc.context = function(_) {
+    return arguments.length ? ((context = _ == null ? null : _), arc) : context;
+  };
+
+  return arc;
+});
+
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=script&lang=js&
 
 
@@ -10798,11 +11323,40 @@ function defaultConstrain(transform, extent, translateExtent) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ var svgRenderervue_type_script_lang_js_ = ({
   name: 'svg-renderer',
-  props: ['size', 'nodes', 'noNodes', 'selected', 'linksSelected', 'links', 'nodeSize', 'padding', 'fontSize', 'strLinks', 'linkWidth', 'nodeLabels', 'linkLabels', 'labelOffset', 'nodeSym'],
+  props: ['size', 'nodes', 'noNodes', 'selected', 'linksSelected', 'links', 'nodeSize', 'padding', 'fontSize', 'strLinks', 'linkWidth', 'nodeLabels', 'linkLabels', 'labelOffset', 'nodeSym', 'color', 'legends'],
   data: function data() {
     return {
       tooltipy: '0px',
@@ -10820,7 +11374,13 @@ function defaultConstrain(transform, extent, translateExtent) {
       }
 
       return null;
+    },
+    arcGenerator: function arcGenerator() {
+      return src_arc().innerRadius(30).outerRadius(40);
     }
+  },
+  mounted: function mounted() {
+    console.log(this.legends);
   },
   methods: {
     nodeSingleClick: function nodeSingleClick(e, node, index) {
@@ -11104,7 +11664,7 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var svgRenderer = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"78feb798-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/canvasRenderer.vue?vue&type=template&id=ba2bf80a&lang=pug&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"540be350-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/canvasRenderer.vue?vue&type=template&id=ba2bf80a&lang=pug&
 var canvasRenderervue_type_template_id_ba2bf80a_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('canvas',{directives:[{name:"render-canvas",rawName:"v-render-canvas",value:({links: _vm.links, nodes: _vm.nodes}),expression:"{links, nodes}"}],ref:"canvas",style:(_vm.canvasStyle),attrs:{"id":"canvas","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){$event.preventDefault();return _vm.canvasClick($event)},"mousedown":function($event){$event.preventDefault();return _vm.canvasClick($event)},"touchstart":function($event){$event.preventDefault();return _vm.canvasClick($event)},"&touchend":function($event){return _vm.canvasClick($event)}}})}
 var canvasRenderervue_type_template_id_ba2bf80a_lang_pug_staticRenderFns = []
 
@@ -11887,6 +12447,7 @@ var es6_typed_uint8_array = __webpack_require__("34ef");
 
 
 
+
 var d3 = assign_default()({}, d3_force_namespaceObject);
 
 /* harmony default export */ var vue_d3_networkvue_type_script_lang_js_ = ({
@@ -11897,6 +12458,15 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
   },
   props: {
     netNodes: {
+      type: Array
+    },
+    terms: {
+      type: Object
+    },
+    color: {
+      type: Object
+    },
+    legends: {
       type: Array
     },
     netLinks: {
@@ -11980,7 +12550,7 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
     var ref = 'svg';
     var props = {};
     var renderer = 'svg-renderer';
-    var bindProps = ['size', 'nodes', 'links', 'selected', 'linksSelected', 'strLinks', 'linkWidth', 'nodeLabels', 'linkLabels', 'fontSize', 'labelOffset', 'offset', 'padding', 'nodeSize', 'noNodes'];
+    var bindProps = ['size', 'nodes', 'links', 'selected', 'linksSelected', 'strLinks', 'linkWidth', 'nodeLabels', 'linkLabels', 'fontSize', 'labelOffset', 'offset', 'padding', 'nodeSize', 'noNodes', 'color', 'legends'];
 
     for (var _i = 0; _i < bindProps.length; _i++) {
       var prop = bindProps[_i];
@@ -12135,6 +12705,10 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
           if (!_this2.canvas && node.svgIcon && !node.svgObj) node.svgObj = svgExport.toObject(node.svgIcon);
         }
 
+        var pieD = src_pie().value(function (d) {
+          return _this2.terms[d.graph_skill.name];
+        });
+        node.pie = pieD(node.skills);
         return node;
       });
     },

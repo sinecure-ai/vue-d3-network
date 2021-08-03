@@ -83,6 +83,23 @@
       //-           )
 
       //-> links
+
+      g(v-for="(item, index) in legends"
+        :transform="`translate(${(index + 1) * 100}, 100)`"
+        )
+        rect(
+          :id="item.id"
+          :fill="color[item.name]"
+          :width="15"
+          :height="15"
+          )
+        text(
+          :x='20'
+          :y='10'
+          :font-size="fontSize"
+          stroke="#000000"
+          ) {{ item.name }}
+
       g.links#l-links
           path(v-for="link in links"
             :d="linkPath(link)"
@@ -149,6 +166,16 @@
             v-bind='node._svgAttrs'
             )
 
+          g(
+            v-for="item in node.pie"
+            :transform="`translate(${node.x}, ${node.y})`"
+          )
+            path(
+              :d="arcGenerator(item)"
+              :id="item.data.graph_skill.id"
+              :fill="color[item.data.graph_skill.name]"
+            )
+
       //-> Links Labels
       g.labels#link-labels(v-if='linkLabels')
         text.link-label(v-for="link in links" :font-size="fontSize" )
@@ -157,8 +184,8 @@
       //- -> Node Labels
       g.labels#node-labels( v-if="nodeLabels")
         text.node-label(v-for="node in nodes"
-          :x='(node.x - 25) + labelOffset.x'
-          :y='(node.y - 15) + labelOffset.y'
+          :x='(node.x - 35) + labelOffset.x'
+          :y='(node.y) + labelOffset.y'
           :font-size="fontSize"
           :class='(node._labelClass) ? node._labelClass : ""'
           :stroke-width='fontSize / 8'
@@ -196,10 +223,12 @@
         )
           button(@touchend.passive='nodeSingleClickRemove($event, selectedNode)'   @click='nodeSingleClickRemove($event, selectedNode)'  style="width: 45%; height: 25px; backgroundColor: green; color: #ffffff;") Accept
           button(@touchend.passive='nodeSingleClickRemove($event, selectedNode)'   @click='nodeSingleClickRemove($event, selectedNode)'  style="width: 45%; height: 25px; backgroundColor: red; color: #ffffff;") Reject
+
 </template>
 <script>
 import svgExport from '../lib/js/svgExport.js'
 import * as d3 from 'd3'
+import { arc } from 'd3-shape'
 
 export default {
   name: 'svg-renderer',
@@ -218,7 +247,9 @@ export default {
     'nodeLabels',
     'linkLabels',
     'labelOffset',
-    'nodeSym'
+    'nodeSym',
+    'color',
+    'legends'
   ],
   data () {
     return {
@@ -238,7 +269,15 @@ export default {
         return svgExport.toObject(this.nodeSym)
       }
       return null
+    },
+    arcGenerator () {
+      return arc()
+        .innerRadius(30)
+        .outerRadius(40)
     }
+  },
+  mounted () {
+    console.log(this.legends)
   },
   methods: {
     nodeSingleClick (e, node, index) {
