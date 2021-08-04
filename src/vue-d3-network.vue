@@ -259,9 +259,9 @@ export default {
         }
         const pieD = pie()
          .value((d) => {
-           return this.terms[d.graph_skill.name]
-          })
-        node.pie = pieD(node.skills)
+             return this.terms[d.name]
+           })
+        node.pie = pieD(this.legends)
         return node
       })
     },

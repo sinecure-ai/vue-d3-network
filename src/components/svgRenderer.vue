@@ -172,8 +172,8 @@
           )
             path(
               :d="arcGenerator(item)"
-              :id="item.data.graph_skill.id"
-              :fill="color[item.data.graph_skill.name]"
+              :id="item.data.id"
+              :fill="skillFill(item, node)"
             )
 
       //-> Links Labels
@@ -277,9 +277,12 @@ export default {
     }
   },
   mounted () {
-    console.log(this.legends)
   },
   methods: {
+    skillFill (item, node) {
+      const index = node.skills.findIndex((skill) => { return item.data.name === skill.graph_skill.name })
+      return index >= 0 ? this.color[item.data.name] : 'gray'
+    },
     nodeSingleClick (e, node, index) {
       if (this.selectedNode && this.selectedNode.id === node.id) {
         this.selectedNode = null
