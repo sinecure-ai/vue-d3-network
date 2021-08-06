@@ -180,7 +180,7 @@ export default {
       }
     },
     yScale () {
-      return d3.scaleLinear().range([this.size.h, 100]).domain([0, this.legends.length])
+      return d3.scaleLinear().range([this.size.h - 200, 200]).domain([0, this.legends.length])
     }
   },
   watch: {
