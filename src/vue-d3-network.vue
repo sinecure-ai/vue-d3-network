@@ -180,7 +180,10 @@ export default {
       }
     },
     yScale () {
-      return d3.scaleLinear().range([this.size.h - 200, 200]).domain([0, this.legends.length])
+      return d3.scaleLinear().range([this.size.h, 200]).domain([0, this.legends.length])
+    },
+    xScale () {
+      return d3.scaleLinear().range([this.size.w, 200]).domain([0, 10])
     }
   },
   watch: {
@@ -264,6 +267,7 @@ export default {
           return index >= 0 ? 1 : 0
         })
         node.skillsMatch = termsArray.reduce((a, b) => a + b, 0)
+        node.yearsOfExp = Math.floor(Math.random() * 10)
         const pieD = pie().value((d) => { return this.terms[d.name] })
         node.pie = pieD(this.legends)
         return node
@@ -296,9 +300,11 @@ export default {
         .nodes(nodes)
       if (forces.Center !== false) sim.force('center', d3.forceCenter(this.center.x, this.center.y))
       if (forces.X !== false) {
-        sim.force('X', d3.forceX(this.center.x).strength(forces.X))
+        // sim.force('X', d3.forceX(this.center.x).strength(forces.X))
+        sim.force('X', d3.forceX((d) => this.xScale(d.yearsOfExp)).strength(forces.X))
       }
       if (forces.Y !== false) {
+        // sim.force('Y', d3.forceY(this.center.y).strength(forces.Y))
         sim.force('Y', d3.forceY((d) => this.yScale(d.skillsMatch)).strength(forces.Y))
       }
       if (forces.ManyBody !== false) {

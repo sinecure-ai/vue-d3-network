@@ -95,7 +95,6 @@ const newNodeName = () => {
 
 // node formatter
 export const newNode = (nodeId) => {
-  
   return {
     id: nodeId,
     name: newNodeName(),
