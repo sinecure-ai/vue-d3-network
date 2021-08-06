@@ -1,11 +1,10 @@
 <script>
-import * as forceSimulation from 'd3-force'
 import { pie } from 'd3-shape'
 import svgRenderer from './components/svgRenderer.vue'
 import canvasRenderer from './components/canvasRenderer.vue'
 import saveImage from './lib/js/saveImage.js'
 import svgExport from './lib/js/svgExport.js'
-const d3 = Object.assign({}, forceSimulation)
+import * as d3 from 'd3'
 
 export default {
   name: 'd3-network',
@@ -179,6 +178,9 @@ export default {
         x: 10,
         y: 50
       }
+    },
+    yScale () {
+      return d3.scaleLinear().range([this.size.h, 100]).domain([0, this.legends.length])
     }
   },
   watch: {
@@ -257,10 +259,12 @@ export default {
           node.svgIcon = svgExport.svgElFromString(node.svgSym)
           if (!this.canvas && node.svgIcon && !node.svgObj) node.svgObj = svgExport.toObject(node.svgIcon)
         }
-        const pieD = pie()
-         .value((d) => {
-             return this.terms[d.name]
-           })
+        const termsArray = this.legends.map((d) => {
+          const index = node.skills.findIndex((r) => r.graph_skill.name === d.name)
+          return index >= 0 ? 1 : 0
+        })
+        node.skillsMatch = termsArray.reduce((a, b) => a + b, 0)
+        const pieD = pie().value((d) => { return this.terms[d.name] })
         node.pie = pieD(this.legends)
         return node
       })
@@ -295,7 +299,7 @@ export default {
         sim.force('X', d3.forceX(this.center.x).strength(forces.X))
       }
       if (forces.Y !== false) {
-        sim.force('Y', d3.forceY(this.center.y).strength(forces.Y))
+        sim.force('Y', d3.forceY((d) => this.yScale(d.skillsMatch)).strength(forces.Y))
       }
       if (forces.ManyBody !== false) {
         sim.force('charge', d3.forceManyBody().strength(-this.force))
