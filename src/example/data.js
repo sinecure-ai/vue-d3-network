@@ -19,7 +19,7 @@ export default {
       x: 0,
       y: 0
     },
-    nodeSize: 50,
+    nodeSize: 20,
     linkWidth: 1,
     nodeLabels: true,
     linkLabels: false,

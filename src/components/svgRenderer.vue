@@ -150,10 +150,8 @@
             @touchend.passive='nodeSingleClick($event, node, key)'
             @mousedown.prevent='emit("dragStart",[$event,key])'
             @touchstart.prevent='emit("dragStart",[$event,key])'
-            @mouseover.prevent='(e) => { mouseover(e, node) }'
-            @mouseout.prevent='(e) => { mouseout(e, node) }'
-            :x="node.x - 25"
-            :y="node.y - 25"
+            :x="node.x - (nodeSize / 2)"
+            :y="node.y - (nodeSize / 2)"
             :style='imgNodeStyle(node)'
             :class="imgNodeClass(node)"
             v-bind='node._svgAttrs'
@@ -281,8 +279,8 @@ export default {
     },
     arcGenerator () {
       return arc()
-        .innerRadius(30)
-        .outerRadius(40)
+        .innerRadius(10)
+        .outerRadius(20)
     },
     yScale () {
       return d3.scaleLinear().range([this.size.h - 200, 200]).domain([0, this.legends.length])
@@ -328,6 +326,7 @@ export default {
       return size
     },
     imgNodeWidth (node, side) {
+      console.log(node)
       let size = node._size || this.nodeSize
       if (side) size = node['_' + side] || size
       return node.added ? size + 25 : size
