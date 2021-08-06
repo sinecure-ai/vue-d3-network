@@ -14,6 +14,15 @@
       @touchstart.passive=''
       )
 
+      g(
+        class="x-axis"
+        :transform="`translate(10, ${this.size.h - 50})`"
+        )
+      g(
+        class="y-axis"
+        :transform="`translate(200, 0)`"
+        )
+
       //- circle(
       //-   :r="size.w / 6"
       //-   :cx="size.w / 2.5"
@@ -274,11 +283,22 @@ export default {
       return arc()
         .innerRadius(30)
         .outerRadius(40)
+    },
+    yScale () {
+      return d3.scaleLinear().range([this.size.h - 200, 200]).domain([0, this.legends.length])
+    },
+    xScale () {
+      return d3.scaleLinear().range([this.size.w - 200, 200]).domain([0, 10])
     }
   },
   mounted () {
+    this.renderAxis()
   },
   methods: {
+    renderAxis () {
+      d3.select('.x-axis').call(d3.axisBottom(this.xScale))
+      d3.select('.y-axis').call(d3.axisLeft(this.yScale))
+    },
     skillFill (item, node) {
       const index = node.skills.findIndex((skill) => { return item.data.name === skill.graph_skill.name })
       return index >= 0 ? this.color[item.data.name] : 'gray'
