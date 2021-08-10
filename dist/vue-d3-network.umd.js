@@ -4421,59 +4421,6 @@ module.exports = document && document.documentElement;
 __webpack_require__.r(__webpack_exports__);
 var d3_src_namespaceObject = {};
 __webpack_require__.r(d3_src_namespaceObject);
-__webpack_require__.d(d3_src_namespaceObject, "arc", function() { return src_arc; });
-__webpack_require__.d(d3_src_namespaceObject, "area", function() { return d3_shape_src_area; });
-__webpack_require__.d(d3_src_namespaceObject, "line", function() { return src_line; });
-__webpack_require__.d(d3_src_namespaceObject, "pie", function() { return src_pie; });
-__webpack_require__.d(d3_src_namespaceObject, "areaRadial", function() { return areaRadial; });
-__webpack_require__.d(d3_src_namespaceObject, "radialArea", function() { return areaRadial; });
-__webpack_require__.d(d3_src_namespaceObject, "lineRadial", function() { return src_lineRadial; });
-__webpack_require__.d(d3_src_namespaceObject, "radialLine", function() { return src_lineRadial; });
-__webpack_require__.d(d3_src_namespaceObject, "pointRadial", function() { return pointRadial; });
-__webpack_require__.d(d3_src_namespaceObject, "linkHorizontal", function() { return linkHorizontal; });
-__webpack_require__.d(d3_src_namespaceObject, "linkVertical", function() { return linkVertical; });
-__webpack_require__.d(d3_src_namespaceObject, "linkRadial", function() { return linkRadial; });
-__webpack_require__.d(d3_src_namespaceObject, "symbol", function() { return src_symbol; });
-__webpack_require__.d(d3_src_namespaceObject, "symbols", function() { return symbols; });
-__webpack_require__.d(d3_src_namespaceObject, "symbolCircle", function() { return symbol_circle; });
-__webpack_require__.d(d3_src_namespaceObject, "symbolCross", function() { return symbol_cross; });
-__webpack_require__.d(d3_src_namespaceObject, "symbolDiamond", function() { return diamond; });
-__webpack_require__.d(d3_src_namespaceObject, "symbolSquare", function() { return symbol_square; });
-__webpack_require__.d(d3_src_namespaceObject, "symbolStar", function() { return star; });
-__webpack_require__.d(d3_src_namespaceObject, "symbolTriangle", function() { return triangle; });
-__webpack_require__.d(d3_src_namespaceObject, "symbolWye", function() { return wye; });
-__webpack_require__.d(d3_src_namespaceObject, "curveBasisClosed", function() { return curve_basisClosed; });
-__webpack_require__.d(d3_src_namespaceObject, "curveBasisOpen", function() { return basisOpen; });
-__webpack_require__.d(d3_src_namespaceObject, "curveBasis", function() { return curve_basis; });
-__webpack_require__.d(d3_src_namespaceObject, "curveBumpX", function() { return bumpX; });
-__webpack_require__.d(d3_src_namespaceObject, "curveBumpY", function() { return bumpY; });
-__webpack_require__.d(d3_src_namespaceObject, "curveBundle", function() { return curve_bundle; });
-__webpack_require__.d(d3_src_namespaceObject, "curveCardinalClosed", function() { return cardinalClosed; });
-__webpack_require__.d(d3_src_namespaceObject, "curveCardinalOpen", function() { return cardinalOpen; });
-__webpack_require__.d(d3_src_namespaceObject, "curveCardinal", function() { return cardinal; });
-__webpack_require__.d(d3_src_namespaceObject, "curveCatmullRomClosed", function() { return catmullRomClosed; });
-__webpack_require__.d(d3_src_namespaceObject, "curveCatmullRomOpen", function() { return catmullRomOpen; });
-__webpack_require__.d(d3_src_namespaceObject, "curveCatmullRom", function() { return curve_catmullRom; });
-__webpack_require__.d(d3_src_namespaceObject, "curveLinearClosed", function() { return linearClosed; });
-__webpack_require__.d(d3_src_namespaceObject, "curveLinear", function() { return curve_linear; });
-__webpack_require__.d(d3_src_namespaceObject, "curveMonotoneX", function() { return monotoneX; });
-__webpack_require__.d(d3_src_namespaceObject, "curveMonotoneY", function() { return monotoneY; });
-__webpack_require__.d(d3_src_namespaceObject, "curveNatural", function() { return natural; });
-__webpack_require__.d(d3_src_namespaceObject, "curveStep", function() { return curve_step; });
-__webpack_require__.d(d3_src_namespaceObject, "curveStepAfter", function() { return stepAfter; });
-__webpack_require__.d(d3_src_namespaceObject, "curveStepBefore", function() { return stepBefore; });
-__webpack_require__.d(d3_src_namespaceObject, "stack", function() { return src_stack; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOffsetExpand", function() { return expand; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOffsetDiverging", function() { return offset_diverging; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOffsetNone", function() { return offset_none; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOffsetSilhouette", function() { return silhouette; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOffsetWiggle", function() { return wiggle; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOrderAppearance", function() { return appearance; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOrderAscending", function() { return order_ascending; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOrderDescending", function() { return order_descending; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOrderInsideOut", function() { return insideOut; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOrderNone", function() { return order_none; });
-__webpack_require__.d(d3_src_namespaceObject, "stackOrderReverse", function() { return order_reverse; });
 __webpack_require__.d(d3_src_namespaceObject, "bisect", function() { return bisect; });
 __webpack_require__.d(d3_src_namespaceObject, "bisectRight", function() { return bisectRight; });
 __webpack_require__.d(d3_src_namespaceObject, "bisectLeft", function() { return bisectLeft; });
@@ -4892,6 +4839,59 @@ __webpack_require__.d(d3_src_namespaceObject, "selector", function() { return sr
 __webpack_require__.d(d3_src_namespaceObject, "selectorAll", function() { return selectorAll; });
 __webpack_require__.d(d3_src_namespaceObject, "style", function() { return styleValue; });
 __webpack_require__.d(d3_src_namespaceObject, "window", function() { return src_window; });
+__webpack_require__.d(d3_src_namespaceObject, "arc", function() { return src_arc; });
+__webpack_require__.d(d3_src_namespaceObject, "area", function() { return d3_shape_src_area; });
+__webpack_require__.d(d3_src_namespaceObject, "line", function() { return src_line; });
+__webpack_require__.d(d3_src_namespaceObject, "pie", function() { return src_pie; });
+__webpack_require__.d(d3_src_namespaceObject, "areaRadial", function() { return areaRadial; });
+__webpack_require__.d(d3_src_namespaceObject, "radialArea", function() { return areaRadial; });
+__webpack_require__.d(d3_src_namespaceObject, "lineRadial", function() { return src_lineRadial; });
+__webpack_require__.d(d3_src_namespaceObject, "radialLine", function() { return src_lineRadial; });
+__webpack_require__.d(d3_src_namespaceObject, "pointRadial", function() { return pointRadial; });
+__webpack_require__.d(d3_src_namespaceObject, "linkHorizontal", function() { return linkHorizontal; });
+__webpack_require__.d(d3_src_namespaceObject, "linkVertical", function() { return linkVertical; });
+__webpack_require__.d(d3_src_namespaceObject, "linkRadial", function() { return linkRadial; });
+__webpack_require__.d(d3_src_namespaceObject, "symbol", function() { return src_symbol; });
+__webpack_require__.d(d3_src_namespaceObject, "symbols", function() { return symbols; });
+__webpack_require__.d(d3_src_namespaceObject, "symbolCircle", function() { return symbol_circle; });
+__webpack_require__.d(d3_src_namespaceObject, "symbolCross", function() { return symbol_cross; });
+__webpack_require__.d(d3_src_namespaceObject, "symbolDiamond", function() { return diamond; });
+__webpack_require__.d(d3_src_namespaceObject, "symbolSquare", function() { return symbol_square; });
+__webpack_require__.d(d3_src_namespaceObject, "symbolStar", function() { return star; });
+__webpack_require__.d(d3_src_namespaceObject, "symbolTriangle", function() { return triangle; });
+__webpack_require__.d(d3_src_namespaceObject, "symbolWye", function() { return wye; });
+__webpack_require__.d(d3_src_namespaceObject, "curveBasisClosed", function() { return curve_basisClosed; });
+__webpack_require__.d(d3_src_namespaceObject, "curveBasisOpen", function() { return basisOpen; });
+__webpack_require__.d(d3_src_namespaceObject, "curveBasis", function() { return curve_basis; });
+__webpack_require__.d(d3_src_namespaceObject, "curveBumpX", function() { return bumpX; });
+__webpack_require__.d(d3_src_namespaceObject, "curveBumpY", function() { return bumpY; });
+__webpack_require__.d(d3_src_namespaceObject, "curveBundle", function() { return curve_bundle; });
+__webpack_require__.d(d3_src_namespaceObject, "curveCardinalClosed", function() { return cardinalClosed; });
+__webpack_require__.d(d3_src_namespaceObject, "curveCardinalOpen", function() { return cardinalOpen; });
+__webpack_require__.d(d3_src_namespaceObject, "curveCardinal", function() { return cardinal; });
+__webpack_require__.d(d3_src_namespaceObject, "curveCatmullRomClosed", function() { return catmullRomClosed; });
+__webpack_require__.d(d3_src_namespaceObject, "curveCatmullRomOpen", function() { return catmullRomOpen; });
+__webpack_require__.d(d3_src_namespaceObject, "curveCatmullRom", function() { return curve_catmullRom; });
+__webpack_require__.d(d3_src_namespaceObject, "curveLinearClosed", function() { return linearClosed; });
+__webpack_require__.d(d3_src_namespaceObject, "curveLinear", function() { return curve_linear; });
+__webpack_require__.d(d3_src_namespaceObject, "curveMonotoneX", function() { return monotoneX; });
+__webpack_require__.d(d3_src_namespaceObject, "curveMonotoneY", function() { return monotoneY; });
+__webpack_require__.d(d3_src_namespaceObject, "curveNatural", function() { return natural; });
+__webpack_require__.d(d3_src_namespaceObject, "curveStep", function() { return curve_step; });
+__webpack_require__.d(d3_src_namespaceObject, "curveStepAfter", function() { return stepAfter; });
+__webpack_require__.d(d3_src_namespaceObject, "curveStepBefore", function() { return stepBefore; });
+__webpack_require__.d(d3_src_namespaceObject, "stack", function() { return src_stack; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOffsetExpand", function() { return expand; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOffsetDiverging", function() { return offset_diverging; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOffsetNone", function() { return offset_none; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOffsetSilhouette", function() { return silhouette; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOffsetWiggle", function() { return wiggle; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOrderAppearance", function() { return appearance; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOrderAscending", function() { return order_ascending; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOrderDescending", function() { return order_descending; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOrderInsideOut", function() { return insideOut; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOrderNone", function() { return order_none; });
+__webpack_require__.d(d3_src_namespaceObject, "stackOrderReverse", function() { return order_reverse; });
 __webpack_require__.d(d3_src_namespaceObject, "timeInterval", function() { return newInterval; });
 __webpack_require__.d(d3_src_namespaceObject, "timeMillisecond", function() { return src_millisecond; });
 __webpack_require__.d(d3_src_namespaceObject, "timeMilliseconds", function() { return milliseconds; });
@@ -5167,12 +5167,12 @@ function asin(x) {
   return pie;
 });
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"46a27d64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=af562526&lang=pug&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"chart-root"}},[_c('svg',{ref:"svg",staticClass:"net-svg",attrs:{"xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){_vm.emit("dragEnd",[$event])},"&touchend":function($event){_vm.emit("dragEnd",[$event])},"&touchstart":function($event){}}},[_c('g',{staticClass:"x-axis",attrs:{"transform":("translate(10, " + (this.size.h - 175) + ")")}}),_c('g',{staticClass:"y-axis",attrs:{"transform":"translate(35, 0)"}}),_vm._l((_vm.legends),function(item,index){return _c('g',{attrs:{"transform":("translate(" + ((index + 1) * 100) + ", 100)")}},[_c('rect',{attrs:{"id":item.id,"fill":_vm.color[item.name],"width":15,"height":15}}),_c('text',{attrs:{"x":20,"y":10,"font-size":_vm.fontSize,"stroke":"#000000"}},[_vm._v(_vm._s(item.name))])])}),_c('g',{staticClass:"links",attrs:{"id":"l-links"}},_vm._l((_vm.links),function(link){return _c('path',_vm._b({class:_vm.linkClass(link.id),style:(_vm.linkStyle(link)),attrs:{"d":_vm.linkPath(link),"id":link.id},on:{"click":function($event){_vm.emit("linkClick",[$event,link])},"&touchstart":function($event){_vm.emit("linkClick",[$event,link])}}},'path',_vm.linkAttrs(link),false))})),(!_vm.noNodes)?_c('g',{staticClass:"nodes",attrs:{"id":"l-nodes"}},[_vm._l((_vm.nodes),function(node,key){return [(_vm.svgIcon(node))?_c('svg',_vm._b({key:key,class:_vm.nodeClass(node,["node-svg"]),style:(_vm.nodeStyle(node)),attrs:{"viewBox":_vm.svgIcon(node).attrs.viewBox,"width":_vm.getNodeSize(node, "width"),"height":_vm.getNodeSize(node, "height"),"x":node.x - _vm.getNodeSize(node, "width") / 2,"y":node.y - _vm.getNodeSize(node, "height") / 2,"title":node.name},domProps:{"innerHTML":_vm._s(_vm.svgIcon(node).data)},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'svg',node._svgAttrs,false)):(_vm.imgNode(node))?_c('image',_vm._b({key:key,class:_vm.imgNodeClass(node),style:(_vm.imgNodeStyle(node)),attrs:{"xlink:href":_vm.imgNodeUrl(node),"width":_vm.imgNodeWidth(node, "width"),"height":_vm.imgNodeHeight(node, "height"),"x":node.x - (_vm.nodeSize / 2),"y":node.y - (_vm.nodeSize / 2)},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'image',node._svgAttrs,false)):_c('circle',_vm._b({key:key,class:_vm.nodeClass(node),style:(_vm.nodeStyle(node)),attrs:{"r":_vm.getNodeSize(node) / 4,"cx":node.x,"cy":node.y,"title":node.name},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'circle',node._svgAttrs,false)),_vm._l((node.pie),function(item){return _c('g',{attrs:{"transform":("translate(" + (node.x) + ", " + (node.y) + ")")}},[_c('path',{attrs:{"d":_vm.arcGenerator(item),"id":item.data.id,"fill":_vm.skillFill(item, node)}})])})]})],2):_vm._e(),(_vm.linkLabels)?_c('g',{staticClass:"labels",attrs:{"id":"link-labels"}},_vm._l((_vm.links),function(link){return _c('text',{staticClass:"link-label",attrs:{"font-size":_vm.fontSize}},[_c('textPath',{attrs:{"xlink:href":'#' + link.id,"startOffset":"50%"}},[_vm._v(_vm._s(link.name))])])})):_vm._e(),(_vm.nodeLabels)?_c('g',{staticClass:"labels",attrs:{"id":"node-labels"}},_vm._l((_vm.nodes),function(node){return _c('text',{staticClass:"node-label",class:(node._labelClass) ? node._labelClass : "",attrs:{"x":(node.x - 35) + _vm.labelOffset.x,"y":(node.y) + _vm.labelOffset.y,"font-size":_vm.fontSize,"stroke-width":_vm.fontSize / 8}},[_vm._v(_vm._s(node.name))])})):_vm._e()],2),_c('div',{style:({ alignItems: 'center', textAlign: 'center', paddingTop: '10px', border: '1px solid #000', zIndex: 99999, position: 'absolute', top: _vm.tooltipy, left: _vm.tooltipx, visibility: _vm.tooltipVisible? 'visible': 'hidden', width: '250px', backgroundColor: '#ffffff'}),attrs:{"id":"tooltip"}},[_c('div',{staticStyle:{"width":"100%"},attrs:{"id":"tooltip-header"}},[(_vm.selectedNode && _vm.selectedNode.imgObj)?_c('img',{staticStyle:{"width":"50px","height":"50px"},attrs:{"id":"tooltip-img","src":_vm.selectedNode.imgObj.url}}):_vm._e()]),(_vm.selectedNode && _vm.selectedNode.name)?_c('div',{attrs:{"id":"tooltip-title"}},[_c('h4',[_vm._v(_vm._s(_vm.selectedNode.name))]),_c('div',{style:({ maxHeight: '200px', overflowY: 'scroll' }),attrs:{"id":"jobs-container"}},_vm._l((_vm.selectedNode.jobs),function(item){return _c('div',{style:({paddingLeft: '10px', alignItems: 'left', textAlign: 'left'}),attrs:{"id":"job-container"}},[_c('p',{staticStyle:{"fontSize":"14px","font-weight":"300"}},[_vm._v(_vm._s(item.job_title))]),_c('p',{staticStyle:{"fontSize":"10px"}},[_vm._v(_vm._s(item.company.name))]),_c('p',{staticStyle:{"fontSize":"10px"}},[_vm._v(_vm._s(item.job_started)+" - "+_vm._s(item.job_ended != null? item.job_ended : 'present'))]),_c('hr')])})),_c('button',{staticStyle:{"margin-left":"10px","width":"90%","height":"25px","backgroundColor":"#14325C","color":"#ffffff"},on:{"&touchend":function($event){_vm.emit("nodeClick",[$event,_vm.selectedNode])},"click":function($event){_vm.emit("nodeClick",[$event,_vm.selectedNode])}}},[_vm._v("View Profile")]),_c('div',{staticStyle:{"width":"100%","padding":"5px"},attrs:{"id":"tooltip-button-group"}},[_c('button',{staticStyle:{"width":"45%","height":"25px","backgroundColor":"green","color":"#ffffff"},on:{"&touchend":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)},"click":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)}}},[_vm._v("Accept")]),_c('button',{staticStyle:{"width":"45%","height":"25px","backgroundColor":"red","color":"#ffffff"},on:{"&touchend":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)},"click":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)}}},[_vm._v("Reject")])])]):_vm._e()])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"19cb487c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=02f276ee&lang=pug&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"chart-root"}},[_c('svg',{ref:"svg",staticClass:"net-svg",attrs:{"xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){_vm.emit("dragEnd",[$event])},"&touchend":function($event){_vm.emit("dragEnd",[$event])},"&touchstart":function($event){}}},[_c('g',{staticClass:"x-axis",attrs:{"transform":("translate(10, " + (this.size.h - 175) + ")")}}),_c('g',{staticClass:"y-axis",attrs:{"transform":"translate(60, 0)"}}),_c('g',{attrs:{"transform":("translate(5, " + (this.size.h / 2) + ")")}},[_c('text',{attrs:{"x":20,"y":10,"font-size":_vm.fontSize,"stroke":"#000000","transform":"translate(0,0) rotate(270)"}},[_vm._v("Percentage of Match")])]),_c('g',{attrs:{"transform":("translate(" + (this.size.w / 2) + ", " + (this.size.h - 150) + ")")}},[_c('text',{attrs:{"x":20,"y":10,"font-size":_vm.fontSize,"stroke":"#000000"}},[_vm._v("Years Of Experience")])]),_vm._l((_vm.legends),function(item,index){return _c('g',{attrs:{"transform":("translate(" + ((index + 1) * 100) + ", 100)")}},[_c('rect',{attrs:{"id":item.id,"fill":_vm.color[item.name],"width":15,"height":15}}),_c('text',{attrs:{"x":20,"y":10,"font-size":_vm.fontSize,"stroke":"#000000"}},[_vm._v(_vm._s(item.name))])])}),_c('g',{staticClass:"links",attrs:{"id":"l-links"}},_vm._l((_vm.links),function(link){return _c('path',_vm._b({class:_vm.linkClass(link.id),style:(_vm.linkStyle(link)),attrs:{"d":_vm.linkPath(link),"id":link.id},on:{"click":function($event){_vm.emit("linkClick",[$event,link])},"&touchstart":function($event){_vm.emit("linkClick",[$event,link])}}},'path',_vm.linkAttrs(link),false))})),(!_vm.noNodes)?_c('g',{staticClass:"nodes",attrs:{"id":"l-nodes"}},[_vm._l((_vm.nodes),function(node,key){return [(_vm.svgIcon(node))?_c('svg',_vm._b({key:key,class:_vm.nodeClass(node,["node-svg"]),style:(_vm.nodeStyle(node)),attrs:{"viewBox":_vm.svgIcon(node).attrs.viewBox,"width":_vm.getNodeSize(node, "width"),"height":_vm.getNodeSize(node, "height"),"x":node.x - _vm.getNodeSize(node, "width") / 2,"y":node.y - _vm.getNodeSize(node, "height") / 2,"title":node.name},domProps:{"innerHTML":_vm._s(_vm.svgIcon(node).data)},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'svg',node._svgAttrs,false)):(_vm.imgNode(node))?_c('image',_vm._b({key:key,class:_vm.imgNodeClass(node),style:(_vm.imgNodeStyle(node)),attrs:{"xlink:href":_vm.imgNodeUrl(node),"width":_vm.imgNodeWidth(node, "width"),"height":_vm.imgNodeHeight(node, "height"),"x":node.x - (_vm.nodeSize / 2),"y":node.y - (_vm.nodeSize / 2)},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'image',node._svgAttrs,false)):_c('circle',_vm._b({key:key,class:_vm.nodeClass(node),style:(_vm.nodeStyle(node)),attrs:{"r":_vm.getNodeSize(node) / 4,"cx":node.x,"cy":node.y,"title":node.name},on:{"click":function($event){_vm.nodeSingleClick($event, node, key)},"&touchend":function($event){_vm.nodeSingleClick($event, node, key)},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'circle',node._svgAttrs,false)),_vm._l((node.pie),function(item){return _c('g',{attrs:{"transform":("translate(" + (node.x) + ", " + (node.y) + ")")}},[_c('path',{attrs:{"d":_vm.arcGenerator(item),"id":item.data.id,"fill":_vm.skillFill(item, node)}})])})]})],2):_vm._e(),(_vm.linkLabels)?_c('g',{staticClass:"labels",attrs:{"id":"link-labels"}},_vm._l((_vm.links),function(link){return _c('text',{staticClass:"link-label",attrs:{"font-size":_vm.fontSize}},[_c('textPath',{attrs:{"xlink:href":'#' + link.id,"startOffset":"50%"}},[_vm._v(_vm._s(link.name))])])})):_vm._e(),(_vm.nodeLabels)?_c('g',{staticClass:"labels",attrs:{"id":"node-labels"}},_vm._l((_vm.nodes),function(node){return _c('text',{staticClass:"node-label",class:(node._labelClass) ? node._labelClass : "",attrs:{"x":(node.x - 35) + _vm.labelOffset.x,"y":(node.y) + _vm.labelOffset.y,"font-size":_vm.fontSize,"stroke-width":_vm.fontSize / 8}},[_vm._v(_vm._s(node.name))])})):_vm._e()],2),_c('div',{style:({ alignItems: 'center', textAlign: 'center', paddingTop: '10px', border: '1px solid #000', zIndex: 99999, position: 'absolute', top: _vm.tooltipy, left: _vm.tooltipx, visibility: _vm.tooltipVisible? 'visible': 'hidden', width: '250px', backgroundColor: '#ffffff'}),attrs:{"id":"tooltip"}},[_c('div',{staticStyle:{"width":"100%"},attrs:{"id":"tooltip-header"}},[(_vm.selectedNode && _vm.selectedNode.imgObj)?_c('img',{staticStyle:{"width":"50px","height":"50px"},attrs:{"id":"tooltip-img","src":_vm.selectedNode.imgObj.url}}):_vm._e()]),(_vm.selectedNode && _vm.selectedNode.name)?_c('div',{attrs:{"id":"tooltip-title"}},[_c('h4',[_vm._v(_vm._s(_vm.selectedNode.name))]),_c('div',{style:({ maxHeight: '200px', overflowY: 'scroll' }),attrs:{"id":"jobs-container"}},_vm._l((_vm.selectedNode.jobs),function(item){return _c('div',{style:({paddingLeft: '10px', alignItems: 'left', textAlign: 'left'}),attrs:{"id":"job-container"}},[_c('p',{staticStyle:{"fontSize":"14px","font-weight":"300"}},[_vm._v(_vm._s(item.job_title))]),_c('p',{staticStyle:{"fontSize":"10px"}},[_vm._v(_vm._s(item.company.name))]),_c('p',{staticStyle:{"fontSize":"10px"}},[_vm._v(_vm._s(item.job_started)+" - "+_vm._s(item.job_ended != null? item.job_ended : 'present'))]),_c('hr')])})),_c('button',{staticStyle:{"margin-left":"10px","width":"90%","height":"25px","backgroundColor":"#14325C","color":"#ffffff"},on:{"&touchend":function($event){_vm.emit("nodeClick",[$event,_vm.selectedNode])},"click":function($event){_vm.emit("nodeClick",[$event,_vm.selectedNode])}}},[_vm._v("View Profile")]),_c('div',{staticStyle:{"width":"100%","padding":"5px"},attrs:{"id":"tooltip-button-group"}},[_c('button',{staticStyle:{"width":"45%","height":"25px","backgroundColor":"green","color":"#ffffff"},on:{"&touchend":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)},"click":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)}}},[_vm._v("Accept")]),_c('button',{staticStyle:{"width":"45%","height":"25px","backgroundColor":"red","color":"#ffffff"},on:{"&touchend":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)},"click":function($event){_vm.nodeSingleClickRemove($event, _vm.selectedNode)}}},[_vm._v("Reject")])])]):_vm._e()])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=af562526&lang=pug&
+// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=02f276ee&lang=pug&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js
 var parse_int = __webpack_require__("e814");
@@ -29524,6 +29524,25 @@ function defaultConstrain(transform, extent, translateExtent) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -29858,7 +29877,7 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var svgRenderer = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"46a27d64-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/canvasRenderer.vue?vue&type=template&id=ba2bf80a&lang=pug&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"19cb487c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/canvasRenderer.vue?vue&type=template&id=ba2bf80a&lang=pug&
 var canvasRenderervue_type_template_id_ba2bf80a_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('canvas',{directives:[{name:"render-canvas",rawName:"v-render-canvas",value:({links: _vm.links, nodes: _vm.nodes}),expression:"{links, nodes}"}],ref:"canvas",style:(_vm.canvasStyle),attrs:{"id":"canvas","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){$event.preventDefault();return _vm.canvasClick($event)},"mousedown":function($event){$event.preventDefault();return _vm.canvasClick($event)},"touchstart":function($event){$event.preventDefault();return _vm.canvasClick($event)},"&touchend":function($event){return _vm.canvasClick($event)}}})}
 var canvasRenderervue_type_template_id_ba2bf80a_lang_pug_staticRenderFns = []
 

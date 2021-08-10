@@ -20,9 +20,28 @@
         )
       g(
         class="y-axis"
-        :transform="`translate(35, 0)`"
+        :transform="`translate(60, 0)`"
         )
 
+      g(
+        :transform="`translate(5, ${this.size.h / 2})`"
+        )
+        text(
+          :x='20'
+          :y='10'
+          :font-size="fontSize"
+          stroke="#000000"
+          :transform="`translate(0,0) rotate(270)`"
+          ) Percentage of Match
+      g(
+        :transform="`translate(${this.size.w / 2}, ${this.size.h - 150})`"
+        )
+        text(
+          :x='20'
+          :y='10'
+          :font-size="fontSize"
+          stroke="#000000"
+          ) Years Of Experience
       //- circle(
       //-   :r="size.w / 6"
       //-   :cx="size.w / 2.5"
@@ -296,7 +315,7 @@ export default {
     renderAxis () {
       d3.select('.x-axis').call(d3.axisBottom(this.xScale))
       d3.select('.y-axis').call(d3.axisLeft(this.yScale).ticks(4).tickFormat((d) => {
-        return `${((d/this.legends.length) * 100).toFixed()} %`;
+        return `${((d / this.legends.length) * 100).toFixed()} %`
       }))
     },
     skillFill (item, node) {
