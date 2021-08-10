@@ -84,8 +84,8 @@ export default {
     return data
   },
   mounted () {
-    this.options.size.w = this.$el.clientWidth
-    this.options.size.h = this.$el.clientHeight
+    this.options.size.w = 1000;
+    this.options.size.h = 800;
   },
   created () {
     this.reset()

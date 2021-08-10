@@ -63,7 +63,7 @@ export default {
       links: [],
       size: {
         w: 1000,
-        h: 1000
+        h: 800
       },
       offset: {
         x: 0,
@@ -183,7 +183,7 @@ export default {
       return d3.scaleLinear().range([this.size.h - 200, 200]).domain([0, this.legends.length])
     },
     xScale () {
-      return d3.scaleLinear().range([this.size.w - 200, 200]).domain([0, 10])
+      return d3.scaleLinear().range([50, this.size.w]).domain([0, 10])
     }
   },
   watch: {

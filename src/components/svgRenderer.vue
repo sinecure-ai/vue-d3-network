@@ -16,11 +16,11 @@
 
       g(
         class="x-axis"
-        :transform="`translate(10, ${this.size.h - 50})`"
+        :transform="`translate(10, ${this.size.h - 175})`"
         )
       g(
         class="y-axis"
-        :transform="`translate(200, 0)`"
+        :transform="`translate(35, 0)`"
         )
 
       //- circle(
@@ -286,7 +286,7 @@ export default {
       return d3.scaleLinear().range([this.size.h - 200, 200]).domain([0, this.legends.length])
     },
     xScale () {
-      return d3.scaleLinear().range([this.size.w - 200, 200]).domain([0, 10])
+      return d3.scaleLinear().range([50, this.size.w]).domain([0, 10])
     }
   },
   mounted () {
@@ -295,7 +295,9 @@ export default {
   methods: {
     renderAxis () {
       d3.select('.x-axis').call(d3.axisBottom(this.xScale))
-      d3.select('.y-axis').call(d3.axisLeft(this.yScale))
+      d3.select('.y-axis').call(d3.axisLeft(this.yScale).ticks(4).tickFormat((d) => {
+        return `${((d/this.legends.length) * 100).toFixed()} %`;
+      }))
     },
     skillFill (item, node) {
       const index = node.skills.findIndex((skill) => { return item.data.name === skill.graph_skill.name })
