@@ -183,7 +183,7 @@ export default {
       return d3.scaleLinear().range([this.size.h - 200, 200]).domain([0, this.legends.length])
     },
     xScale () {
-      return d3.scaleLinear().range([50, this.size.w]).domain([0, 10])
+      return d3.scaleLinear().range([100, this.size.w]).domain([0, 10])
     }
   },
   watch: {

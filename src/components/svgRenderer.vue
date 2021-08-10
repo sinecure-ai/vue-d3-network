@@ -16,7 +16,7 @@
 
       g(
         class="x-axis"
-        :transform="`translate(10, ${this.size.h - 175})`"
+        :transform="`translate(10, ${this.size.h - 150})`"
         )
       g(
         class="y-axis"
@@ -34,7 +34,7 @@
           :transform="`translate(0,0) rotate(270)`"
           ) Percentage of Match
       g(
-        :transform="`translate(${this.size.w / 2}, ${this.size.h - 150})`"
+        :transform="`translate(${this.size.w / 2}, ${this.size.h - 125})`"
         )
         text(
           :x='20'
@@ -305,7 +305,7 @@ export default {
       return d3.scaleLinear().range([this.size.h - 200, 200]).domain([0, this.legends.length])
     },
     xScale () {
-      return d3.scaleLinear().range([50, this.size.w]).domain([0, 10])
+      return d3.scaleLinear().range([100, this.size.w]).domain([0, 10])
     }
   },
   mounted () {
