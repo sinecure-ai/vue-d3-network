@@ -315,7 +315,7 @@ export default {
     renderAxis () {
       d3.select('.x-axis').call(d3.axisBottom(this.xScale))
       d3.select('.y-axis').call(d3.axisLeft(this.yScale).ticks(4).tickFormat((d) => {
-        return `${((d / this.legends.length) * 100).toFixed()} %`
+        return this.legends.length > 0 ? `${((d / this.legends.length) * 100).toFixed()} %` : d
       }))
     },
     skillFill (item, node) {
