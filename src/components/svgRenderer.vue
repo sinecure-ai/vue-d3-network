@@ -16,7 +16,7 @@
 
       g(
         class="x-axis"
-        :transform="`translate(10, ${this.size.h - 150})`"
+        :transform="`translate(10, ${this.size.h - 100})`"
         )
       g(
         class="y-axis"
@@ -34,7 +34,7 @@
           :transform="`translate(0,0) rotate(270)`"
           ) Percentage of Match
       g(
-        :transform="`translate(${this.size.w / 2}, ${this.size.h - 125})`"
+        :transform="`translate(${this.size.w / 2}, ${this.size.h - 75})`"
         )
         text(
           :x='20'
